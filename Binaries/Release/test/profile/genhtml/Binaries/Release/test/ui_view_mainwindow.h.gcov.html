@@ -1,0 +1,250 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - Binaries/Release/test/ui_view_mainwindow.h</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../../index.html">top level</a> - <a href="index.html">Binaries/Release/test</a> - ui_view_mainwindow.h<span style="font-size: 80%;"> (source / <a href="ui_view_mainwindow.h.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">71</td>
+            <td class="headerCovTableEntry">71</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2015-07-22 15:15:40</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">19</td>
+            <td class="headerCovTableEntry">19</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : /********************************************************************************</a>
+<span class="lineNum">       2 </span>            : ** Form generated from reading UI file 'view_mainwindow.ui'
+<span class="lineNum">       3 </span>            : **
+<span class="lineNum">       4 </span>            : ** Created by: Qt User Interface Compiler version 5.5.0
+<span class="lineNum">       5 </span>            : **
+<span class="lineNum">       6 </span>            : ** WARNING! All changes made in this file will be lost when recompiling UI file!
+<span class="lineNum">       7 </span>            : ********************************************************************************/
+<span class="lineNum">       8 </span>            : 
+<span class="lineNum">       9 </span>            : #ifndef UI_VIEW_MAINWINDOW_H
+<span class="lineNum">      10 </span>            : #define UI_VIEW_MAINWINDOW_H
+<span class="lineNum">      11 </span>            : 
+<span class="lineNum">      12 </span>            : #include &lt;QtCore/QVariant&gt;
+<span class="lineNum">      13 </span>            : #include &lt;QtWidgets/QAction&gt;
+<span class="lineNum">      14 </span>            : #include &lt;QtWidgets/QApplication&gt;
+<span class="lineNum">      15 </span>            : #include &lt;QtWidgets/QButtonGroup&gt;
+<span class="lineNum">      16 </span>            : #include &lt;QtWidgets/QFrame&gt;
+<span class="lineNum">      17 </span>            : #include &lt;QtWidgets/QGridLayout&gt;
+<span class="lineNum">      18 </span>            : #include &lt;QtWidgets/QHBoxLayout&gt;
+<span class="lineNum">      19 </span>            : #include &lt;QtWidgets/QHeaderView&gt;
+<span class="lineNum">      20 </span>            : #include &lt;QtWidgets/QLabel&gt;
+<span class="lineNum">      21 </span>            : #include &lt;QtWidgets/QMainWindow&gt;
+<span class="lineNum">      22 </span>            : #include &lt;QtWidgets/QPushButton&gt;
+<span class="lineNum">      23 </span>            : #include &lt;QtWidgets/QSpacerItem&gt;
+<span class="lineNum">      24 </span>            : #include &lt;QtWidgets/QStatusBar&gt;
+<span class="lineNum">      25 </span>            : #include &lt;QtWidgets/QVBoxLayout&gt;
+<span class="lineNum">      26 </span>            : #include &lt;QtWidgets/QWidget&gt;
+<span class="lineNum">      27 </span>            : #include &quot;view_mainwidget.h&quot;
+<span class="lineNum">      28 </span>            : 
+<span class="lineNum">      29 </span>            : QT_BEGIN_NAMESPACE
+<span class="lineNum">      30 </span>            : 
+<span class="lineNum">      31 </span>            : class Ui_MainWindow
+<span class="lineNum">      32 </span>            : {
+<span class="lineNum">      33 </span>            : public:
+<span class="lineNum">      34 </span>            :     QWidget *centralwidget;
+<span class="lineNum">      35 </span>            :     QHBoxLayout *horizontalLayout_2;
+<span class="lineNum">      36 </span>            :     QVBoxLayout *verticalLayout_2;
+<span class="lineNum">      37 </span>            :     QHBoxLayout *horizontalLayout;
+<span class="lineNum">      38 </span>            :     QVBoxLayout *verticalLayout_3;
+<span class="lineNum">      39 </span>            :     QLabel *lblFPS;
+<span class="lineNum">      40 </span>            :     QLabel *lblStartupTime;
+<span class="lineNum">      41 </span>            :     QLabel *lblCount;
+<span class="lineNum">      42 </span>            :     QVBoxLayout *verticalLayout;
+<span class="lineNum">      43 </span>            :     QPushButton *pbtAdd;
+<span class="lineNum">      44 </span>            :     QPushButton *pbtRemove;
+<span class="lineNum">      45 </span>            :     QPushButton *pbtStartStop;
+<span class="lineNum">      46 </span>            :     QFrame *frame;
+<span class="lineNum">      47 </span>            :     QGridLayout *gridLayout;
+<span class="lineNum">      48 </span>            :     QSpacerItem *verticalSpacer;
+<span class="lineNum">      49 </span>            :     QSpacerItem *horizontalSpacer;
+<span class="lineNum">      50 </span>            :     View_MainWidget *openGLWidget;
+<span class="lineNum">      51 </span>            :     QSpacerItem *horizontalSpacer_2;
+<span class="lineNum">      52 </span>            :     QSpacerItem *verticalSpacer_2;
+<a name="53"><span class="lineNum">      53 </span>            :     QStatusBar *statusbar;</a>
+<span class="lineNum">      54 </span>            : 
+<span class="lineNum">      55 </span>            :     void setupUi(QMainWindow *MainWindow)
+<a name="56"><span class="lineNum">      56 </span>            :     {</a>
+<span class="lineNum">      57 </span><span class="lineCov">         14 :         if (MainWindow-&gt;objectName().isEmpty())</span>
+<span class="lineNum">      58 </span><span class="lineCov">         56 :             MainWindow-&gt;setObjectName(QStringLiteral(&quot;MainWindow&quot;));</span>
+<a name="59"><span class="lineNum">      59 </span><span class="lineCov">         14 :         MainWindow-&gt;resize(800, 600);</span></a>
+<span class="lineNum">      60 </span><span class="lineCov">         28 :         centralwidget = new QWidget(MainWindow);</span>
+<a name="61"><span class="lineNum">      61 </span><span class="lineCov">         56 :         centralwidget-&gt;setObjectName(QStringLiteral(&quot;centralwidget&quot;));</span></a>
+<span class="lineNum">      62 </span><span class="lineCov">         28 :         horizontalLayout_2 = new QHBoxLayout(centralwidget);</span>
+<a name="63"><span class="lineNum">      63 </span><span class="lineCov">         56 :         horizontalLayout_2-&gt;setObjectName(QStringLiteral(&quot;horizontalLayout_2&quot;));</span></a>
+<span class="lineNum">      64 </span><span class="lineCov">         28 :         verticalLayout_2 = new QVBoxLayout();</span>
+<a name="65"><span class="lineNum">      65 </span><span class="lineCov">         56 :         verticalLayout_2-&gt;setObjectName(QStringLiteral(&quot;verticalLayout_2&quot;));</span></a>
+<span class="lineNum">      66 </span><span class="lineCov">         28 :         horizontalLayout = new QHBoxLayout();</span>
+<a name="67"><span class="lineNum">      67 </span><span class="lineCov">         56 :         horizontalLayout-&gt;setObjectName(QStringLiteral(&quot;horizontalLayout&quot;));</span></a>
+<span class="lineNum">      68 </span><span class="lineCov">         28 :         verticalLayout_3 = new QVBoxLayout();</span>
+<a name="69"><span class="lineNum">      69 </span><span class="lineCov">         56 :         verticalLayout_3-&gt;setObjectName(QStringLiteral(&quot;verticalLayout_3&quot;));</span></a>
+<span class="lineNum">      70 </span><span class="lineCov">         28 :         lblFPS = new QLabel(centralwidget);</span>
+<span class="lineNum">      71 </span><span class="lineCov">         56 :         lblFPS-&gt;setObjectName(QStringLiteral(&quot;lblFPS&quot;));</span>
+<span class="lineNum">      72 </span>            : 
+<span class="lineNum">      73 </span><span class="lineCov">         14 :         verticalLayout_3-&gt;addWidget(lblFPS);</span>
+<a name="74"><span class="lineNum">      74 </span>            : </a>
+<span class="lineNum">      75 </span><span class="lineCov">         28 :         lblStartupTime = new QLabel(centralwidget);</span>
+<span class="lineNum">      76 </span><span class="lineCov">         56 :         lblStartupTime-&gt;setObjectName(QStringLiteral(&quot;lblStartupTime&quot;));</span>
+<span class="lineNum">      77 </span>            : 
+<span class="lineNum">      78 </span><span class="lineCov">         14 :         verticalLayout_3-&gt;addWidget(lblStartupTime);</span>
+<a name="79"><span class="lineNum">      79 </span>            : </a>
+<span class="lineNum">      80 </span><span class="lineCov">         28 :         lblCount = new QLabel(centralwidget);</span>
+<span class="lineNum">      81 </span><span class="lineCov">         56 :         lblCount-&gt;setObjectName(QStringLiteral(&quot;lblCount&quot;));</span>
+<span class="lineNum">      82 </span>            : 
+<span class="lineNum">      83 </span><span class="lineCov">         14 :         verticalLayout_3-&gt;addWidget(lblCount);</span>
+<span class="lineNum">      84 </span>            : 
+<span class="lineNum">      85 </span>            : 
+<span class="lineNum">      86 </span><span class="lineCov">         14 :         horizontalLayout-&gt;addLayout(verticalLayout_3);</span>
+<a name="87"><span class="lineNum">      87 </span>            : </a>
+<span class="lineNum">      88 </span><span class="lineCov">         28 :         verticalLayout = new QVBoxLayout();</span>
+<a name="89"><span class="lineNum">      89 </span><span class="lineCov">         56 :         verticalLayout-&gt;setObjectName(QStringLiteral(&quot;verticalLayout&quot;));</span></a>
+<span class="lineNum">      90 </span><span class="lineCov">         28 :         pbtAdd = new QPushButton(centralwidget);</span>
+<span class="lineNum">      91 </span><span class="lineCov">         56 :         pbtAdd-&gt;setObjectName(QStringLiteral(&quot;pbtAdd&quot;));</span>
+<span class="lineNum">      92 </span><span class="lineCov">         14 :         pbtAdd-&gt;setFlat(false);</span>
+<span class="lineNum">      93 </span>            : 
+<span class="lineNum">      94 </span><span class="lineCov">         14 :         verticalLayout-&gt;addWidget(pbtAdd);</span>
+<a name="95"><span class="lineNum">      95 </span>            : </a>
+<span class="lineNum">      96 </span><span class="lineCov">         28 :         pbtRemove = new QPushButton(centralwidget);</span>
+<span class="lineNum">      97 </span><span class="lineCov">         56 :         pbtRemove-&gt;setObjectName(QStringLiteral(&quot;pbtRemove&quot;));</span>
+<span class="lineNum">      98 </span>            : 
+<span class="lineNum">      99 </span><span class="lineCov">         14 :         verticalLayout-&gt;addWidget(pbtRemove);</span>
+<a name="100"><span class="lineNum">     100 </span>            : </a>
+<span class="lineNum">     101 </span><span class="lineCov">         28 :         pbtStartStop = new QPushButton(centralwidget);</span>
+<span class="lineNum">     102 </span><span class="lineCov">         56 :         pbtStartStop-&gt;setObjectName(QStringLiteral(&quot;pbtStartStop&quot;));</span>
+<span class="lineNum">     103 </span>            : 
+<span class="lineNum">     104 </span><span class="lineCov">         14 :         verticalLayout-&gt;addWidget(pbtStartStop);</span>
+<span class="lineNum">     105 </span>            : 
+<span class="lineNum">     106 </span>            : 
+<span class="lineNum">     107 </span><span class="lineCov">         14 :         horizontalLayout-&gt;addLayout(verticalLayout);</span>
+<span class="lineNum">     108 </span>            : 
+<span class="lineNum">     109 </span>            : 
+<span class="lineNum">     110 </span><span class="lineCov">         14 :         verticalLayout_2-&gt;addLayout(horizontalLayout);</span>
+<a name="111"><span class="lineNum">     111 </span>            : </a>
+<span class="lineNum">     112 </span><span class="lineCov">         28 :         frame = new QFrame(centralwidget);</span>
+<span class="lineNum">     113 </span><span class="lineCov">         56 :         frame-&gt;setObjectName(QStringLiteral(&quot;frame&quot;));</span>
+<span class="lineNum">     114 </span><span class="lineCov">         14 :         frame-&gt;setFrameShape(QFrame::StyledPanel);</span>
+<a name="115"><span class="lineNum">     115 </span><span class="lineCov">         14 :         frame-&gt;setFrameShadow(QFrame::Raised);</span></a>
+<span class="lineNum">     116 </span><span class="lineCov">         28 :         gridLayout = new QGridLayout(frame);</span>
+<span class="lineNum">     117 </span><span class="lineCov">         56 :         gridLayout-&gt;setObjectName(QStringLiteral(&quot;gridLayout&quot;));</span>
+<span class="lineNum">     118 </span><span class="lineCov">         28 :         verticalSpacer = new QSpacerItem(20, 1, QSizePolicy::Minimum, QSizePolicy::Fixed);</span>
+<span class="lineNum">     119 </span>            : 
+<span class="lineNum">     120 </span><span class="lineCov">         14 :         gridLayout-&gt;addItem(verticalSpacer, 0, 1, 1, 1);</span>
+<span class="lineNum">     121 </span>            : 
+<span class="lineNum">     122 </span><span class="lineCov">         28 :         horizontalSpacer = new QSpacerItem(1, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);</span>
+<span class="lineNum">     123 </span>            : 
+<span class="lineNum">     124 </span><span class="lineCov">         14 :         gridLayout-&gt;addItem(horizontalSpacer, 1, 0, 1, 1);</span>
+<a name="125"><span class="lineNum">     125 </span>            : </a>
+<span class="lineNum">     126 </span><span class="lineCov">         28 :         openGLWidget = new View_MainWidget(frame);</span>
+<span class="lineNum">     127 </span><span class="lineCov">         56 :         openGLWidget-&gt;setObjectName(QStringLiteral(&quot;openGLWidget&quot;));</span>
+<span class="lineNum">     128 </span>            : 
+<span class="lineNum">     129 </span><span class="lineCov">         14 :         gridLayout-&gt;addWidget(openGLWidget, 1, 1, 1, 1);</span>
+<span class="lineNum">     130 </span>            : 
+<span class="lineNum">     131 </span><span class="lineCov">         28 :         horizontalSpacer_2 = new QSpacerItem(1, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);</span>
+<span class="lineNum">     132 </span>            : 
+<span class="lineNum">     133 </span><span class="lineCov">         14 :         gridLayout-&gt;addItem(horizontalSpacer_2, 1, 2, 1, 1);</span>
+<span class="lineNum">     134 </span>            : 
+<span class="lineNum">     135 </span><span class="lineCov">         28 :         verticalSpacer_2 = new QSpacerItem(20, 1, QSizePolicy::Minimum, QSizePolicy::Fixed);</span>
+<span class="lineNum">     136 </span>            : 
+<span class="lineNum">     137 </span><span class="lineCov">         14 :         gridLayout-&gt;addItem(verticalSpacer_2, 2, 1, 1, 1);</span>
+<span class="lineNum">     138 </span>            : 
+<span class="lineNum">     139 </span>            : 
+<span class="lineNum">     140 </span><span class="lineCov">         14 :         verticalLayout_2-&gt;addWidget(frame);</span>
+<span class="lineNum">     141 </span>            : 
+<span class="lineNum">     142 </span>            : 
+<span class="lineNum">     143 </span><span class="lineCov">         14 :         horizontalLayout_2-&gt;addLayout(verticalLayout_2);</span>
+<span class="lineNum">     144 </span>            : 
+<a name="145"><span class="lineNum">     145 </span><span class="lineCov">         14 :         MainWindow-&gt;setCentralWidget(centralwidget);</span></a>
+<span class="lineNum">     146 </span><span class="lineCov">         28 :         statusbar = new QStatusBar(MainWindow);</span>
+<span class="lineNum">     147 </span><span class="lineCov">         56 :         statusbar-&gt;setObjectName(QStringLiteral(&quot;statusbar&quot;));</span>
+<span class="lineNum">     148 </span><span class="lineCov">         14 :         MainWindow-&gt;setStatusBar(statusbar);</span>
+<span class="lineNum">     149 </span>            : 
+<span class="lineNum">     150 </span><span class="lineCov">         14 :         retranslateUi(MainWindow);</span>
+<span class="lineNum">     151 </span>            : 
+<span class="lineNum">     152 </span><span class="lineCov">         14 :         QMetaObject::connectSlotsByName(MainWindow);</span>
+<a name="153"><span class="lineNum">     153 </span><span class="lineCov">         14 :     } // setupUi</span></a>
+<span class="lineNum">     154 </span>            : 
+<span class="lineNum">     155 </span>            :     void retranslateUi(QMainWindow *MainWindow)
+<span class="lineNum">     156 </span>            :     {
+<span class="lineNum">     157 </span><span class="lineCov">         28 :         MainWindow-&gt;setWindowTitle(QApplication::translate(&quot;MainWindow&quot;, &quot;MainWindow&quot;, 0));</span>
+<span class="lineNum">     158 </span><span class="lineCov">         28 :         lblFPS-&gt;setText(QApplication::translate(&quot;MainWindow&quot;, &quot;Current FPS:&quot;, 0));</span>
+<span class="lineNum">     159 </span><span class="lineCov">         28 :         lblStartupTime-&gt;setText(QApplication::translate(&quot;MainWindow&quot;, &quot;Startup Time: &quot;, 0));</span>
+<span class="lineNum">     160 </span><span class="lineCov">         28 :         lblCount-&gt;setText(QApplication::translate(&quot;MainWindow&quot;, &quot;Cubes count:&quot;, 0));</span>
+<span class="lineNum">     161 </span><span class="lineCov">         28 :         pbtAdd-&gt;setText(QApplication::translate(&quot;MainWindow&quot;, &quot;Add Cube&quot;, 0));</span>
+<span class="lineNum">     162 </span><span class="lineCov">         28 :         pbtRemove-&gt;setText(QApplication::translate(&quot;MainWindow&quot;, &quot;Remove Cube&quot;, 0));</span>
+<span class="lineNum">     163 </span><span class="lineCov">         28 :         pbtStartStop-&gt;setText(QApplication::translate(&quot;MainWindow&quot;, &quot;Start / Stop Animation&quot;, 0));</span>
+<span class="lineNum">     164 </span><span class="lineCov">         14 :     } // retranslateUi</span>
+<span class="lineNum">     165 </span>            : 
+<span class="lineNum">     166 </span>            : };
+<span class="lineNum">     167 </span>            : 
+<span class="lineNum">     168 </span>            : namespace Ui {
+<span class="lineNum">     169 </span>            :     class MainWindow: public Ui_MainWindow {};
+<span class="lineNum">     170 </span>            : } // namespace Ui
+<span class="lineNum">     171 </span>            : 
+<span class="lineNum">     172 </span>            : QT_END_NAMESPACE
+<span class="lineNum">     173 </span>            : 
+<span class="lineNum">     174 </span>            : #endif // UI_VIEW_MAINWINDOW_H
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.11</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

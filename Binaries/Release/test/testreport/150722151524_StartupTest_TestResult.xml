@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCase name="StartupTimeTest">
+<Environment>
+    <QtVersion>5.5.0</QtVersion>
+    <QtBuild>Qt 5.5.0 (x86_64&#x002D;little_endian&#x002D;lp64 shared (dynamic) release build; by Clang 6.0 (clang&#x002D;600.0.56) (Apple))</QtBuild>
+    <QTestVersion>5.5.0</QTestVersion>
+</Environment>
+<TestFunction name="initTestCase">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="120.417799"/>
+</TestFunction>
+<TestFunction name="test">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="41.642960"/>
+</TestFunction>
+<TestFunction name="cleanupTestCase">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="0.038626"/>
+</TestFunction>
+<Duration msecs="162.190750"/>
+</TestCase>

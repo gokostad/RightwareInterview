@@ -1,0 +1,1203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - QtGui.framework/Headers/qmatrix4x4.h</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../index.html">top level</a> - <a href="index.html">QtGui.framework/Headers</a> - qmatrix4x4.h<span style="font-size: 80%;"> (source / <a href="qmatrix4x4.h.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">42</td>
+            <td class="headerCovTableEntry">51</td>
+            <td class="headerCovTableEntryMed">82.4 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2015-07-19 23:52:44</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : /****************************************************************************</a>
+<span class="lineNum">       2 </span>            : **
+<span class="lineNum">       3 </span>            : ** Copyright (C) 2015 The Qt Company Ltd.
+<span class="lineNum">       4 </span>            : ** Contact: http://www.qt.io/licensing/
+<span class="lineNum">       5 </span>            : **
+<span class="lineNum">       6 </span>            : ** This file is part of the QtGui module of the Qt Toolkit.
+<span class="lineNum">       7 </span>            : **
+<span class="lineNum">       8 </span>            : ** $QT_BEGIN_LICENSE:LGPL21$
+<span class="lineNum">       9 </span>            : ** Commercial License Usage
+<span class="lineNum">      10 </span>            : ** Licensees holding valid commercial Qt licenses may use this file in
+<span class="lineNum">      11 </span>            : ** accordance with the commercial license agreement provided with the
+<span class="lineNum">      12 </span>            : ** Software or, alternatively, in accordance with the terms contained in
+<span class="lineNum">      13 </span>            : ** a written agreement between you and The Qt Company. For licensing terms
+<span class="lineNum">      14 </span>            : ** and conditions see http://www.qt.io/terms-conditions. For further
+<span class="lineNum">      15 </span>            : ** information use the contact form at http://www.qt.io/contact-us.
+<span class="lineNum">      16 </span>            : **
+<span class="lineNum">      17 </span>            : ** GNU Lesser General Public License Usage
+<span class="lineNum">      18 </span>            : ** Alternatively, this file may be used under the terms of the GNU Lesser
+<span class="lineNum">      19 </span>            : ** General Public License version 2.1 or version 3 as published by the Free
+<span class="lineNum">      20 </span>            : ** Software Foundation and appearing in the file LICENSE.LGPLv21 and
+<span class="lineNum">      21 </span>            : ** LICENSE.LGPLv3 included in the packaging of this file. Please review the
+<span class="lineNum">      22 </span>            : ** following information to ensure the GNU Lesser General Public License
+<span class="lineNum">      23 </span>            : ** requirements will be met: https://www.gnu.org/licenses/lgpl.html and
+<span class="lineNum">      24 </span>            : ** http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
+<span class="lineNum">      25 </span>            : **
+<span class="lineNum">      26 </span>            : ** As a special exception, The Qt Company gives you certain additional
+<span class="lineNum">      27 </span>            : ** rights. These rights are described in The Qt Company LGPL Exception
+<span class="lineNum">      28 </span>            : ** version 1.1, included in the file LGPL_EXCEPTION.txt in this package.
+<span class="lineNum">      29 </span>            : **
+<span class="lineNum">      30 </span>            : ** $QT_END_LICENSE$
+<span class="lineNum">      31 </span>            : **
+<span class="lineNum">      32 </span>            : ****************************************************************************/
+<span class="lineNum">      33 </span>            : 
+<span class="lineNum">      34 </span>            : #ifndef QMATRIX4X4_H
+<span class="lineNum">      35 </span>            : #define QMATRIX4X4_H
+<span class="lineNum">      36 </span>            : 
+<span class="lineNum">      37 </span>            : #include &lt;QtGui/qvector3d.h&gt;
+<span class="lineNum">      38 </span>            : #include &lt;QtGui/qvector4d.h&gt;
+<span class="lineNum">      39 </span>            : #include &lt;QtGui/qquaternion.h&gt;
+<span class="lineNum">      40 </span>            : #include &lt;QtGui/qgenericmatrix.h&gt;
+<span class="lineNum">      41 </span>            : #include &lt;QtCore/qrect.h&gt;
+<span class="lineNum">      42 </span>            : 
+<span class="lineNum">      43 </span>            : QT_BEGIN_NAMESPACE
+<span class="lineNum">      44 </span>            : 
+<span class="lineNum">      45 </span>            : 
+<span class="lineNum">      46 </span>            : #ifndef QT_NO_MATRIX4X4
+<span class="lineNum">      47 </span>            : 
+<span class="lineNum">      48 </span>            : class QMatrix;
+<span class="lineNum">      49 </span>            : class QTransform;
+<span class="lineNum">      50 </span>            : class QVariant;
+<span class="lineNum">      51 </span>            : 
+<span class="lineNum">      52 </span>            : class Q_GUI_EXPORT QMatrix4x4
+<a name="53"><span class="lineNum">      53 </span>            : {</a>
+<span class="lineNum">      54 </span>            : public:
+<span class="lineNum">      55 </span><span class="lineCov">      51122 :     inline QMatrix4x4() { setToIdentity(); }</span>
+<span class="lineNum">      56 </span>            :     explicit QMatrix4x4(Qt::Initialization) : flagBits(General) {}
+<span class="lineNum">      57 </span>            :     explicit QMatrix4x4(const float *values);
+<span class="lineNum">      58 </span>            :     inline QMatrix4x4(float m11, float m12, float m13, float m14,
+<span class="lineNum">      59 </span>            :                       float m21, float m22, float m23, float m24,
+<span class="lineNum">      60 </span>            :                       float m31, float m32, float m33, float m34,
+<span class="lineNum">      61 </span>            :                       float m41, float m42, float m43, float m44);
+<span class="lineNum">      62 </span>            : 
+<span class="lineNum">      63 </span>            :     template &lt;int N, int M&gt;
+<span class="lineNum">      64 </span>            :     explicit QMatrix4x4(const QGenericMatrix&lt;N, M, float&gt;&amp; matrix);
+<span class="lineNum">      65 </span>            : 
+<span class="lineNum">      66 </span>            :     QMatrix4x4(const float *values, int cols, int rows);
+<span class="lineNum">      67 </span>            :     QMatrix4x4(const QTransform&amp; transform);
+<span class="lineNum">      68 </span>            :     QMatrix4x4(const QMatrix&amp; matrix);
+<span class="lineNum">      69 </span>            : 
+<span class="lineNum">      70 </span>            :     inline const float&amp; operator()(int row, int column) const;
+<span class="lineNum">      71 </span>            :     inline float&amp; operator()(int row, int column);
+<span class="lineNum">      72 </span>            : 
+<span class="lineNum">      73 </span>            : #ifndef QT_NO_VECTOR4D
+<span class="lineNum">      74 </span>            :     inline QVector4D column(int index) const;
+<span class="lineNum">      75 </span>            :     inline void setColumn(int index, const QVector4D&amp; value);
+<span class="lineNum">      76 </span>            : 
+<span class="lineNum">      77 </span>            :     inline QVector4D row(int index) const;
+<span class="lineNum">      78 </span>            :     inline void setRow(int index, const QVector4D&amp; value);
+<span class="lineNum">      79 </span>            : #endif
+<span class="lineNum">      80 </span>            : 
+<span class="lineNum">      81 </span>            :     inline bool isAffine() const;
+<span class="lineNum">      82 </span>            : 
+<span class="lineNum">      83 </span>            :     inline bool isIdentity() const;
+<span class="lineNum">      84 </span>            :     inline void setToIdentity();
+<span class="lineNum">      85 </span>            : 
+<span class="lineNum">      86 </span>            :     inline void fill(float value);
+<span class="lineNum">      87 </span>            : 
+<span class="lineNum">      88 </span>            :     double determinant() const;
+<span class="lineNum">      89 </span>            :     QMatrix4x4 inverted(bool *invertible = 0) const;
+<span class="lineNum">      90 </span>            :     QMatrix4x4 transposed() const;
+<span class="lineNum">      91 </span>            :     QMatrix3x3 normalMatrix() const;
+<span class="lineNum">      92 </span>            : 
+<span class="lineNum">      93 </span>            :     inline QMatrix4x4&amp; operator+=(const QMatrix4x4&amp; other);
+<span class="lineNum">      94 </span>            :     inline QMatrix4x4&amp; operator-=(const QMatrix4x4&amp; other);
+<span class="lineNum">      95 </span>            :     inline QMatrix4x4&amp; operator*=(const QMatrix4x4&amp; other);
+<span class="lineNum">      96 </span>            :     inline QMatrix4x4&amp; operator*=(float factor);
+<span class="lineNum">      97 </span>            :     QMatrix4x4&amp; operator/=(float divisor);
+<span class="lineNum">      98 </span>            :     inline bool operator==(const QMatrix4x4&amp; other) const;
+<span class="lineNum">      99 </span>            :     inline bool operator!=(const QMatrix4x4&amp; other) const;
+<span class="lineNum">     100 </span>            : 
+<span class="lineNum">     101 </span>            :     friend QMatrix4x4 operator+(const QMatrix4x4&amp; m1, const QMatrix4x4&amp; m2);
+<span class="lineNum">     102 </span>            :     friend QMatrix4x4 operator-(const QMatrix4x4&amp; m1, const QMatrix4x4&amp; m2);
+<span class="lineNum">     103 </span>            :     friend QMatrix4x4 operator*(const QMatrix4x4&amp; m1, const QMatrix4x4&amp; m2);
+<span class="lineNum">     104 </span>            : #ifndef QT_NO_VECTOR3D
+<span class="lineNum">     105 </span>            :     friend QVector3D operator*(const QMatrix4x4&amp; matrix, const QVector3D&amp; vector);
+<span class="lineNum">     106 </span>            :     friend QVector3D operator*(const QVector3D&amp; vector, const QMatrix4x4&amp; matrix);
+<span class="lineNum">     107 </span>            : #endif
+<span class="lineNum">     108 </span>            : #ifndef QT_NO_VECTOR4D
+<span class="lineNum">     109 </span>            :     friend QVector4D operator*(const QVector4D&amp; vector, const QMatrix4x4&amp; matrix);
+<span class="lineNum">     110 </span>            :     friend QVector4D operator*(const QMatrix4x4&amp; matrix, const QVector4D&amp; vector);
+<span class="lineNum">     111 </span>            : #endif
+<span class="lineNum">     112 </span>            :     friend QPoint operator*(const QPoint&amp; point, const QMatrix4x4&amp; matrix);
+<span class="lineNum">     113 </span>            :     friend QPointF operator*(const QPointF&amp; point, const QMatrix4x4&amp; matrix);
+<span class="lineNum">     114 </span>            :     friend QMatrix4x4 operator-(const QMatrix4x4&amp; matrix);
+<span class="lineNum">     115 </span>            :     friend QPoint operator*(const QMatrix4x4&amp; matrix, const QPoint&amp; point);
+<span class="lineNum">     116 </span>            :     friend QPointF operator*(const QMatrix4x4&amp; matrix, const QPointF&amp; point);
+<span class="lineNum">     117 </span>            :     friend QMatrix4x4 operator*(float factor, const QMatrix4x4&amp; matrix);
+<span class="lineNum">     118 </span>            :     friend QMatrix4x4 operator*(const QMatrix4x4&amp; matrix, float factor);
+<span class="lineNum">     119 </span>            :     friend Q_GUI_EXPORT QMatrix4x4 operator/(const QMatrix4x4&amp; matrix, float divisor);
+<span class="lineNum">     120 </span>            : 
+<span class="lineNum">     121 </span>            :     friend inline bool qFuzzyCompare(const QMatrix4x4&amp; m1, const QMatrix4x4&amp; m2);
+<span class="lineNum">     122 </span>            : 
+<span class="lineNum">     123 </span>            : #ifndef QT_NO_VECTOR3D
+<span class="lineNum">     124 </span>            :     void scale(const QVector3D&amp; vector);
+<span class="lineNum">     125 </span>            :     void translate(const QVector3D&amp; vector);
+<span class="lineNum">     126 </span>            :     void rotate(float angle, const QVector3D&amp; vector);
+<span class="lineNum">     127 </span>            : #endif
+<span class="lineNum">     128 </span>            :     void scale(float x, float y);
+<span class="lineNum">     129 </span>            :     void scale(float x, float y, float z);
+<span class="lineNum">     130 </span>            :     void scale(float factor);
+<span class="lineNum">     131 </span>            :     void translate(float x, float y);
+<span class="lineNum">     132 </span>            :     void translate(float x, float y, float z);
+<span class="lineNum">     133 </span>            :     void rotate(float angle, float x, float y, float z = 0.0f);
+<span class="lineNum">     134 </span>            : #ifndef QT_NO_QUATERNION
+<span class="lineNum">     135 </span>            :     void rotate(const QQuaternion&amp; quaternion);
+<span class="lineNum">     136 </span>            : #endif
+<span class="lineNum">     137 </span>            : 
+<span class="lineNum">     138 </span>            :     void ortho(const QRect&amp; rect);
+<span class="lineNum">     139 </span>            :     void ortho(const QRectF&amp; rect);
+<span class="lineNum">     140 </span>            :     void ortho(float left, float right, float bottom, float top, float nearPlane, float farPlane);
+<span class="lineNum">     141 </span>            :     void frustum(float left, float right, float bottom, float top, float nearPlane, float farPlane);
+<span class="lineNum">     142 </span>            :     void perspective(float verticalAngle, float aspectRatio, float nearPlane, float farPlane);
+<span class="lineNum">     143 </span>            : #ifndef QT_NO_VECTOR3D
+<span class="lineNum">     144 </span>            :     void lookAt(const QVector3D&amp; eye, const QVector3D&amp; center, const QVector3D&amp; up);
+<span class="lineNum">     145 </span>            : #endif
+<span class="lineNum">     146 </span>            :     void viewport(const QRectF &amp;rect);
+<span class="lineNum">     147 </span>            :     void viewport(float left, float bottom, float width, float height, float nearPlane = 0.0f, float farPlane = 1.0f);
+<span class="lineNum">     148 </span>            :     void flipCoordinates();
+<span class="lineNum">     149 </span>            : 
+<span class="lineNum">     150 </span>            :     void copyDataTo(float *values) const;
+<span class="lineNum">     151 </span>            : 
+<span class="lineNum">     152 </span>            :     QMatrix toAffine() const;
+<span class="lineNum">     153 </span>            :     QTransform toTransform() const;
+<span class="lineNum">     154 </span>            :     QTransform toTransform(float distanceToPlane) const;
+<span class="lineNum">     155 </span>            : 
+<span class="lineNum">     156 </span>            :     QPoint map(const QPoint&amp; point) const;
+<span class="lineNum">     157 </span>            :     QPointF map(const QPointF&amp; point) const;
+<span class="lineNum">     158 </span>            : #ifndef QT_NO_VECTOR3D
+<span class="lineNum">     159 </span>            :     QVector3D map(const QVector3D&amp; point) const;
+<span class="lineNum">     160 </span>            :     QVector3D mapVector(const QVector3D&amp; vector) const;
+<span class="lineNum">     161 </span>            : #endif
+<span class="lineNum">     162 </span>            : #ifndef QT_NO_VECTOR4D
+<span class="lineNum">     163 </span>            :     QVector4D map(const QVector4D&amp; point) const;
+<span class="lineNum">     164 </span>            : #endif
+<span class="lineNum">     165 </span>            :     QRect mapRect(const QRect&amp; rect) const;
+<span class="lineNum">     166 </span>            :     QRectF mapRect(const QRectF&amp; rect) const;
+<span class="lineNum">     167 </span>            : 
+<span class="lineNum">     168 </span>            :     template &lt;int N, int M&gt;
+<span class="lineNum">     169 </span>            :     QGenericMatrix&lt;N, M, float&gt; toGenericMatrix() const;
+<span class="lineNum">     170 </span>            : 
+<span class="lineNum">     171 </span>            :     inline float *data();
+<span class="lineNum">     172 </span>            :     inline const float *data() const { return *m; }
+<span class="lineNum">     173 </span>            :     inline const float *constData() const { return *m; }
+<span class="lineNum">     174 </span>            : 
+<span class="lineNum">     175 </span>            :     void optimize();
+<span class="lineNum">     176 </span>            : 
+<span class="lineNum">     177 </span>            :     operator QVariant() const;
+<span class="lineNum">     178 </span>            : 
+<span class="lineNum">     179 </span>            : #ifndef QT_NO_DEBUG_STREAM
+<span class="lineNum">     180 </span>            :     friend Q_GUI_EXPORT QDebug operator&lt;&lt;(QDebug dbg, const QMatrix4x4 &amp;m);
+<span class="lineNum">     181 </span>            : #endif
+<span class="lineNum">     182 </span>            : 
+<span class="lineNum">     183 </span>            : private:
+<span class="lineNum">     184 </span>            :     float m[4][4];          // Column-major order to match OpenGL.
+<span class="lineNum">     185 </span>            :     int flagBits;           // Flag bits from the enum below.
+<span class="lineNum">     186 </span>            : 
+<span class="lineNum">     187 </span>            :     // When matrices are multiplied, the flag bits are or-ed together.
+<span class="lineNum">     188 </span>            :     enum {
+<span class="lineNum">     189 </span>            :         Identity        = 0x0000, // Identity matrix
+<span class="lineNum">     190 </span>            :         Translation     = 0x0001, // Contains a translation
+<span class="lineNum">     191 </span>            :         Scale           = 0x0002, // Contains a scale
+<span class="lineNum">     192 </span>            :         Rotation2D      = 0x0004, // Contains a rotation about the Z axis
+<span class="lineNum">     193 </span>            :         Rotation        = 0x0008, // Contains an arbitrary rotation
+<span class="lineNum">     194 </span>            :         Perspective     = 0x0010, // Last row is different from (0, 0, 0, 1)
+<span class="lineNum">     195 </span>            :         General         = 0x001f  // General matrix, unknown contents
+<span class="lineNum">     196 </span>            :     };
+<a name="197"><span class="lineNum">     197 </span>            : </a>
+<span class="lineNum">     198 </span>            :     // Construct without initializing identity matrix.
+<span class="lineNum">     199 </span><span class="lineCov">      51102 :     explicit QMatrix4x4(int) { }</span>
+<span class="lineNum">     200 </span>            : 
+<span class="lineNum">     201 </span>            :     QMatrix4x4 orthonormalInverse() const;
+<span class="lineNum">     202 </span>            : 
+<span class="lineNum">     203 </span>            :     void projectedRotate(float angle, float x, float y, float z);
+<span class="lineNum">     204 </span>            : 
+<span class="lineNum">     205 </span>            :     friend class QGraphicsRotation;
+<span class="lineNum">     206 </span>            : };
+<span class="lineNum">     207 </span>            : 
+<span class="lineNum">     208 </span>            : Q_DECLARE_TYPEINFO(QMatrix4x4, Q_MOVABLE_TYPE);
+<span class="lineNum">     209 </span>            : 
+<span class="lineNum">     210 </span>            : inline QMatrix4x4::QMatrix4x4
+<span class="lineNum">     211 </span>            :         (float m11, float m12, float m13, float m14,
+<span class="lineNum">     212 </span>            :          float m21, float m22, float m23, float m24,
+<span class="lineNum">     213 </span>            :          float m31, float m32, float m33, float m34,
+<span class="lineNum">     214 </span>            :          float m41, float m42, float m43, float m44)
+<span class="lineNum">     215 </span>            : {
+<span class="lineNum">     216 </span>            :     m[0][0] = m11; m[0][1] = m21; m[0][2] = m31; m[0][3] = m41;
+<span class="lineNum">     217 </span>            :     m[1][0] = m12; m[1][1] = m22; m[1][2] = m32; m[1][3] = m42;
+<span class="lineNum">     218 </span>            :     m[2][0] = m13; m[2][1] = m23; m[2][2] = m33; m[2][3] = m43;
+<span class="lineNum">     219 </span>            :     m[3][0] = m14; m[3][1] = m24; m[3][2] = m34; m[3][3] = m44;
+<span class="lineNum">     220 </span>            :     flagBits = General;
+<span class="lineNum">     221 </span>            : }
+<span class="lineNum">     222 </span>            : 
+<span class="lineNum">     223 </span>            : template &lt;int N, int M&gt;
+<span class="lineNum">     224 </span>            : Q_INLINE_TEMPLATE QMatrix4x4::QMatrix4x4
+<span class="lineNum">     225 </span>            :     (const QGenericMatrix&lt;N, M, float&gt;&amp; matrix)
+<span class="lineNum">     226 </span>            : {
+<span class="lineNum">     227 </span>            :     const float *values = matrix.constData();
+<span class="lineNum">     228 </span>            :     for (int matrixCol = 0; matrixCol &lt; 4; ++matrixCol) {
+<span class="lineNum">     229 </span>            :         for (int matrixRow = 0; matrixRow &lt; 4; ++matrixRow) {
+<span class="lineNum">     230 </span>            :             if (matrixCol &lt; N &amp;&amp; matrixRow &lt; M)
+<span class="lineNum">     231 </span>            :                 m[matrixCol][matrixRow] = values[matrixCol * M + matrixRow];
+<span class="lineNum">     232 </span>            :             else if (matrixCol == matrixRow)
+<span class="lineNum">     233 </span>            :                 m[matrixCol][matrixRow] = 1.0f;
+<span class="lineNum">     234 </span>            :             else
+<span class="lineNum">     235 </span>            :                 m[matrixCol][matrixRow] = 0.0f;
+<span class="lineNum">     236 </span>            :         }
+<span class="lineNum">     237 </span>            :     }
+<span class="lineNum">     238 </span>            :     flagBits = General;
+<span class="lineNum">     239 </span>            : }
+<span class="lineNum">     240 </span>            : 
+<span class="lineNum">     241 </span>            : template &lt;int N, int M&gt;
+<span class="lineNum">     242 </span>            : QGenericMatrix&lt;N, M, float&gt; QMatrix4x4::toGenericMatrix() const
+<span class="lineNum">     243 </span>            : {
+<span class="lineNum">     244 </span>            :     QGenericMatrix&lt;N, M, float&gt; result;
+<span class="lineNum">     245 </span>            :     float *values = result.data();
+<span class="lineNum">     246 </span>            :     for (int matrixCol = 0; matrixCol &lt; N; ++matrixCol) {
+<span class="lineNum">     247 </span>            :         for (int matrixRow = 0; matrixRow &lt; M; ++matrixRow) {
+<span class="lineNum">     248 </span>            :             if (matrixCol &lt; 4 &amp;&amp; matrixRow &lt; 4)
+<span class="lineNum">     249 </span>            :                 values[matrixCol * M + matrixRow] = m[matrixCol][matrixRow];
+<span class="lineNum">     250 </span>            :             else if (matrixCol == matrixRow)
+<span class="lineNum">     251 </span>            :                 values[matrixCol * M + matrixRow] = 1.0f;
+<span class="lineNum">     252 </span>            :             else
+<span class="lineNum">     253 </span>            :                 values[matrixCol * M + matrixRow] = 0.0f;
+<span class="lineNum">     254 </span>            :         }
+<span class="lineNum">     255 </span>            :     }
+<span class="lineNum">     256 </span>            :     return result;
+<span class="lineNum">     257 </span>            : }
+<span class="lineNum">     258 </span>            : 
+<span class="lineNum">     259 </span>            : inline const float&amp; QMatrix4x4::operator()(int aRow, int aColumn) const
+<span class="lineNum">     260 </span>            : {
+<span class="lineNum">     261 </span>            :     Q_ASSERT(aRow &gt;= 0 &amp;&amp; aRow &lt; 4 &amp;&amp; aColumn &gt;= 0 &amp;&amp; aColumn &lt; 4);
+<span class="lineNum">     262 </span>            :     return m[aColumn][aRow];
+<span class="lineNum">     263 </span>            : }
+<span class="lineNum">     264 </span>            : 
+<span class="lineNum">     265 </span>            : inline float&amp; QMatrix4x4::operator()(int aRow, int aColumn)
+<span class="lineNum">     266 </span>            : {
+<span class="lineNum">     267 </span>            :     Q_ASSERT(aRow &gt;= 0 &amp;&amp; aRow &lt; 4 &amp;&amp; aColumn &gt;= 0 &amp;&amp; aColumn &lt; 4);
+<span class="lineNum">     268 </span>            :     flagBits = General;
+<span class="lineNum">     269 </span>            :     return m[aColumn][aRow];
+<span class="lineNum">     270 </span>            : }
+<span class="lineNum">     271 </span>            : 
+<span class="lineNum">     272 </span>            : #ifndef QT_NO_VECTOR4D
+<span class="lineNum">     273 </span>            : inline QVector4D QMatrix4x4::column(int index) const
+<span class="lineNum">     274 </span>            : {
+<span class="lineNum">     275 </span>            :     Q_ASSERT(index &gt;= 0 &amp;&amp; index &lt; 4);
+<span class="lineNum">     276 </span>            :     return QVector4D(m[index][0], m[index][1], m[index][2], m[index][3]);
+<span class="lineNum">     277 </span>            : }
+<span class="lineNum">     278 </span>            : 
+<span class="lineNum">     279 </span>            : inline void QMatrix4x4::setColumn(int index, const QVector4D&amp; value)
+<span class="lineNum">     280 </span>            : {
+<span class="lineNum">     281 </span>            :     Q_ASSERT(index &gt;= 0 &amp;&amp; index &lt; 4);
+<span class="lineNum">     282 </span>            :     m[index][0] = value.x();
+<span class="lineNum">     283 </span>            :     m[index][1] = value.y();
+<span class="lineNum">     284 </span>            :     m[index][2] = value.z();
+<span class="lineNum">     285 </span>            :     m[index][3] = value.w();
+<span class="lineNum">     286 </span>            :     flagBits = General;
+<span class="lineNum">     287 </span>            : }
+<span class="lineNum">     288 </span>            : 
+<span class="lineNum">     289 </span>            : inline QVector4D QMatrix4x4::row(int index) const
+<span class="lineNum">     290 </span>            : {
+<span class="lineNum">     291 </span>            :     Q_ASSERT(index &gt;= 0 &amp;&amp; index &lt; 4);
+<span class="lineNum">     292 </span>            :     return QVector4D(m[0][index], m[1][index], m[2][index], m[3][index]);
+<span class="lineNum">     293 </span>            : }
+<span class="lineNum">     294 </span>            : 
+<span class="lineNum">     295 </span>            : inline void QMatrix4x4::setRow(int index, const QVector4D&amp; value)
+<span class="lineNum">     296 </span>            : {
+<span class="lineNum">     297 </span>            :     Q_ASSERT(index &gt;= 0 &amp;&amp; index &lt; 4);
+<span class="lineNum">     298 </span>            :     m[0][index] = value.x();
+<span class="lineNum">     299 </span>            :     m[1][index] = value.y();
+<span class="lineNum">     300 </span>            :     m[2][index] = value.z();
+<span class="lineNum">     301 </span>            :     m[3][index] = value.w();
+<span class="lineNum">     302 </span>            :     flagBits = General;
+<span class="lineNum">     303 </span>            : }
+<span class="lineNum">     304 </span>            : #endif
+<span class="lineNum">     305 </span>            : 
+<span class="lineNum">     306 </span>            : Q_GUI_EXPORT QMatrix4x4 operator/(const QMatrix4x4&amp; matrix, float divisor);
+<span class="lineNum">     307 </span>            : 
+<span class="lineNum">     308 </span>            : inline bool QMatrix4x4::isAffine() const
+<span class="lineNum">     309 </span>            : {
+<span class="lineNum">     310 </span>            :     return m[0][3] == 0.0f &amp;&amp; m[1][3] == 0.0f &amp;&amp; m[2][3] == 0.0f &amp;&amp; m[3][3] == 1.0f;
+<span class="lineNum">     311 </span>            : }
+<span class="lineNum">     312 </span>            : 
+<span class="lineNum">     313 </span>            : inline bool QMatrix4x4::isIdentity() const
+<span class="lineNum">     314 </span>            : {
+<span class="lineNum">     315 </span>            :     if (flagBits == Identity)
+<span class="lineNum">     316 </span>            :         return true;
+<span class="lineNum">     317 </span>            :     if (m[0][0] != 1.0f || m[0][1] != 0.0f || m[0][2] != 0.0f)
+<span class="lineNum">     318 </span>            :         return false;
+<span class="lineNum">     319 </span>            :     if (m[0][3] != 0.0f || m[1][0] != 0.0f || m[1][1] != 1.0f)
+<span class="lineNum">     320 </span>            :         return false;
+<span class="lineNum">     321 </span>            :     if (m[1][2] != 0.0f || m[1][3] != 0.0f || m[2][0] != 0.0f)
+<span class="lineNum">     322 </span>            :         return false;
+<span class="lineNum">     323 </span>            :     if (m[2][1] != 0.0f || m[2][2] != 1.0f || m[2][3] != 0.0f)
+<span class="lineNum">     324 </span>            :         return false;
+<span class="lineNum">     325 </span>            :     if (m[3][0] != 0.0f || m[3][1] != 0.0f || m[3][2] != 0.0f)
+<span class="lineNum">     326 </span>            :         return false;
+<span class="lineNum">     327 </span>            :     return (m[3][3] == 1.0f);
+<a name="328"><span class="lineNum">     328 </span>            : }</a>
+<span class="lineNum">     329 </span>            : 
+<span class="lineNum">     330 </span>            : inline void QMatrix4x4::setToIdentity()
+<span class="lineNum">     331 </span>            : {
+<span class="lineNum">     332 </span><span class="lineCov">      25571 :     m[0][0] = 1.0f;</span>
+<span class="lineNum">     333 </span><span class="lineCov">      25571 :     m[0][1] = 0.0f;</span>
+<span class="lineNum">     334 </span><span class="lineCov">      25571 :     m[0][2] = 0.0f;</span>
+<span class="lineNum">     335 </span><span class="lineCov">      25571 :     m[0][3] = 0.0f;</span>
+<span class="lineNum">     336 </span><span class="lineCov">      25571 :     m[1][0] = 0.0f;</span>
+<span class="lineNum">     337 </span><span class="lineCov">      25571 :     m[1][1] = 1.0f;</span>
+<span class="lineNum">     338 </span><span class="lineCov">      25571 :     m[1][2] = 0.0f;</span>
+<span class="lineNum">     339 </span><span class="lineCov">      25571 :     m[1][3] = 0.0f;</span>
+<span class="lineNum">     340 </span><span class="lineCov">      25571 :     m[2][0] = 0.0f;</span>
+<span class="lineNum">     341 </span><span class="lineCov">      25571 :     m[2][1] = 0.0f;</span>
+<span class="lineNum">     342 </span><span class="lineCov">      25571 :     m[2][2] = 1.0f;</span>
+<span class="lineNum">     343 </span><span class="lineCov">      25571 :     m[2][3] = 0.0f;</span>
+<span class="lineNum">     344 </span><span class="lineCov">      25571 :     m[3][0] = 0.0f;</span>
+<span class="lineNum">     345 </span><span class="lineCov">      25571 :     m[3][1] = 0.0f;</span>
+<span class="lineNum">     346 </span><span class="lineCov">      25571 :     m[3][2] = 0.0f;</span>
+<span class="lineNum">     347 </span><span class="lineCov">      25571 :     m[3][3] = 1.0f;</span>
+<span class="lineNum">     348 </span><span class="lineCov">      25571 :     flagBits = Identity;</span>
+<span class="lineNum">     349 </span><span class="lineCov">      25571 : }</span>
+<span class="lineNum">     350 </span>            : 
+<span class="lineNum">     351 </span>            : inline void QMatrix4x4::fill(float value)
+<span class="lineNum">     352 </span>            : {
+<span class="lineNum">     353 </span>            :     m[0][0] = value;
+<span class="lineNum">     354 </span>            :     m[0][1] = value;
+<span class="lineNum">     355 </span>            :     m[0][2] = value;
+<span class="lineNum">     356 </span>            :     m[0][3] = value;
+<span class="lineNum">     357 </span>            :     m[1][0] = value;
+<span class="lineNum">     358 </span>            :     m[1][1] = value;
+<span class="lineNum">     359 </span>            :     m[1][2] = value;
+<span class="lineNum">     360 </span>            :     m[1][3] = value;
+<span class="lineNum">     361 </span>            :     m[2][0] = value;
+<span class="lineNum">     362 </span>            :     m[2][1] = value;
+<span class="lineNum">     363 </span>            :     m[2][2] = value;
+<span class="lineNum">     364 </span>            :     m[2][3] = value;
+<span class="lineNum">     365 </span>            :     m[3][0] = value;
+<span class="lineNum">     366 </span>            :     m[3][1] = value;
+<span class="lineNum">     367 </span>            :     m[3][2] = value;
+<span class="lineNum">     368 </span>            :     m[3][3] = value;
+<span class="lineNum">     369 </span>            :     flagBits = General;
+<span class="lineNum">     370 </span>            : }
+<span class="lineNum">     371 </span>            : 
+<span class="lineNum">     372 </span>            : inline QMatrix4x4&amp; QMatrix4x4::operator+=(const QMatrix4x4&amp; other)
+<span class="lineNum">     373 </span>            : {
+<span class="lineNum">     374 </span>            :     m[0][0] += other.m[0][0];
+<span class="lineNum">     375 </span>            :     m[0][1] += other.m[0][1];
+<span class="lineNum">     376 </span>            :     m[0][2] += other.m[0][2];
+<span class="lineNum">     377 </span>            :     m[0][3] += other.m[0][3];
+<span class="lineNum">     378 </span>            :     m[1][0] += other.m[1][0];
+<span class="lineNum">     379 </span>            :     m[1][1] += other.m[1][1];
+<span class="lineNum">     380 </span>            :     m[1][2] += other.m[1][2];
+<span class="lineNum">     381 </span>            :     m[1][3] += other.m[1][3];
+<span class="lineNum">     382 </span>            :     m[2][0] += other.m[2][0];
+<span class="lineNum">     383 </span>            :     m[2][1] += other.m[2][1];
+<span class="lineNum">     384 </span>            :     m[2][2] += other.m[2][2];
+<span class="lineNum">     385 </span>            :     m[2][3] += other.m[2][3];
+<span class="lineNum">     386 </span>            :     m[3][0] += other.m[3][0];
+<span class="lineNum">     387 </span>            :     m[3][1] += other.m[3][1];
+<span class="lineNum">     388 </span>            :     m[3][2] += other.m[3][2];
+<span class="lineNum">     389 </span>            :     m[3][3] += other.m[3][3];
+<span class="lineNum">     390 </span>            :     flagBits = General;
+<span class="lineNum">     391 </span>            :     return *this;
+<span class="lineNum">     392 </span>            : }
+<span class="lineNum">     393 </span>            : 
+<span class="lineNum">     394 </span>            : inline QMatrix4x4&amp; QMatrix4x4::operator-=(const QMatrix4x4&amp; other)
+<span class="lineNum">     395 </span>            : {
+<span class="lineNum">     396 </span>            :     m[0][0] -= other.m[0][0];
+<span class="lineNum">     397 </span>            :     m[0][1] -= other.m[0][1];
+<span class="lineNum">     398 </span>            :     m[0][2] -= other.m[0][2];
+<span class="lineNum">     399 </span>            :     m[0][3] -= other.m[0][3];
+<span class="lineNum">     400 </span>            :     m[1][0] -= other.m[1][0];
+<span class="lineNum">     401 </span>            :     m[1][1] -= other.m[1][1];
+<span class="lineNum">     402 </span>            :     m[1][2] -= other.m[1][2];
+<span class="lineNum">     403 </span>            :     m[1][3] -= other.m[1][3];
+<span class="lineNum">     404 </span>            :     m[2][0] -= other.m[2][0];
+<span class="lineNum">     405 </span>            :     m[2][1] -= other.m[2][1];
+<span class="lineNum">     406 </span>            :     m[2][2] -= other.m[2][2];
+<span class="lineNum">     407 </span>            :     m[2][3] -= other.m[2][3];
+<span class="lineNum">     408 </span>            :     m[3][0] -= other.m[3][0];
+<span class="lineNum">     409 </span>            :     m[3][1] -= other.m[3][1];
+<span class="lineNum">     410 </span>            :     m[3][2] -= other.m[3][2];
+<span class="lineNum">     411 </span>            :     m[3][3] -= other.m[3][3];
+<span class="lineNum">     412 </span>            :     flagBits = General;
+<span class="lineNum">     413 </span>            :     return *this;
+<span class="lineNum">     414 </span>            : }
+<span class="lineNum">     415 </span>            : 
+<span class="lineNum">     416 </span>            : inline QMatrix4x4&amp; QMatrix4x4::operator*=(const QMatrix4x4&amp; other)
+<span class="lineNum">     417 </span>            : {
+<span class="lineNum">     418 </span>            :     flagBits |= other.flagBits;
+<span class="lineNum">     419 </span>            : 
+<span class="lineNum">     420 </span>            :     if (flagBits &lt; Rotation2D) {
+<span class="lineNum">     421 </span>            :         m[3][0] += m[0][0] * other.m[3][0];
+<span class="lineNum">     422 </span>            :         m[3][1] += m[1][1] * other.m[3][1];
+<span class="lineNum">     423 </span>            :         m[3][2] += m[2][2] * other.m[3][2];
+<span class="lineNum">     424 </span>            : 
+<span class="lineNum">     425 </span>            :         m[0][0] *= other.m[0][0];
+<span class="lineNum">     426 </span>            :         m[1][1] *= other.m[1][1];
+<span class="lineNum">     427 </span>            :         m[2][2] *= other.m[2][2];
+<span class="lineNum">     428 </span>            :         return *this;
+<span class="lineNum">     429 </span>            :     }
+<span class="lineNum">     430 </span>            : 
+<span class="lineNum">     431 </span>            :     float m0, m1, m2;
+<span class="lineNum">     432 </span>            :     m0 = m[0][0] * other.m[0][0]
+<span class="lineNum">     433 </span>            :             + m[1][0] * other.m[0][1]
+<span class="lineNum">     434 </span>            :             + m[2][0] * other.m[0][2]
+<span class="lineNum">     435 </span>            :             + m[3][0] * other.m[0][3];
+<span class="lineNum">     436 </span>            :     m1 = m[0][0] * other.m[1][0]
+<span class="lineNum">     437 </span>            :             + m[1][0] * other.m[1][1]
+<span class="lineNum">     438 </span>            :             + m[2][0] * other.m[1][2]
+<span class="lineNum">     439 </span>            :             + m[3][0] * other.m[1][3];
+<span class="lineNum">     440 </span>            :     m2 = m[0][0] * other.m[2][0]
+<span class="lineNum">     441 </span>            :             + m[1][0] * other.m[2][1]
+<span class="lineNum">     442 </span>            :             + m[2][0] * other.m[2][2]
+<span class="lineNum">     443 </span>            :             + m[3][0] * other.m[2][3];
+<span class="lineNum">     444 </span>            :     m[3][0] = m[0][0] * other.m[3][0]
+<span class="lineNum">     445 </span>            :             + m[1][0] * other.m[3][1]
+<span class="lineNum">     446 </span>            :             + m[2][0] * other.m[3][2]
+<span class="lineNum">     447 </span>            :             + m[3][0] * other.m[3][3];
+<span class="lineNum">     448 </span>            :     m[0][0] = m0;
+<span class="lineNum">     449 </span>            :     m[1][0] = m1;
+<span class="lineNum">     450 </span>            :     m[2][0] = m2;
+<span class="lineNum">     451 </span>            : 
+<span class="lineNum">     452 </span>            :     m0 = m[0][1] * other.m[0][0]
+<span class="lineNum">     453 </span>            :             + m[1][1] * other.m[0][1]
+<span class="lineNum">     454 </span>            :             + m[2][1] * other.m[0][2]
+<span class="lineNum">     455 </span>            :             + m[3][1] * other.m[0][3];
+<span class="lineNum">     456 </span>            :     m1 = m[0][1] * other.m[1][0]
+<span class="lineNum">     457 </span>            :             + m[1][1] * other.m[1][1]
+<span class="lineNum">     458 </span>            :             + m[2][1] * other.m[1][2]
+<span class="lineNum">     459 </span>            :             + m[3][1] * other.m[1][3];
+<span class="lineNum">     460 </span>            :     m2 = m[0][1] * other.m[2][0]
+<span class="lineNum">     461 </span>            :             + m[1][1] * other.m[2][1]
+<span class="lineNum">     462 </span>            :             + m[2][1] * other.m[2][2]
+<span class="lineNum">     463 </span>            :             + m[3][1] * other.m[2][3];
+<span class="lineNum">     464 </span>            :     m[3][1] = m[0][1] * other.m[3][0]
+<span class="lineNum">     465 </span>            :             + m[1][1] * other.m[3][1]
+<span class="lineNum">     466 </span>            :             + m[2][1] * other.m[3][2]
+<span class="lineNum">     467 </span>            :             + m[3][1] * other.m[3][3];
+<span class="lineNum">     468 </span>            :     m[0][1] = m0;
+<span class="lineNum">     469 </span>            :     m[1][1] = m1;
+<span class="lineNum">     470 </span>            :     m[2][1] = m2;
+<span class="lineNum">     471 </span>            : 
+<span class="lineNum">     472 </span>            :     m0 = m[0][2] * other.m[0][0]
+<span class="lineNum">     473 </span>            :             + m[1][2] * other.m[0][1]
+<span class="lineNum">     474 </span>            :             + m[2][2] * other.m[0][2]
+<span class="lineNum">     475 </span>            :             + m[3][2] * other.m[0][3];
+<span class="lineNum">     476 </span>            :     m1 = m[0][2] * other.m[1][0]
+<span class="lineNum">     477 </span>            :             + m[1][2] * other.m[1][1]
+<span class="lineNum">     478 </span>            :             + m[2][2] * other.m[1][2]
+<span class="lineNum">     479 </span>            :             + m[3][2] * other.m[1][3];
+<span class="lineNum">     480 </span>            :     m2 = m[0][2] * other.m[2][0]
+<span class="lineNum">     481 </span>            :             + m[1][2] * other.m[2][1]
+<span class="lineNum">     482 </span>            :             + m[2][2] * other.m[2][2]
+<span class="lineNum">     483 </span>            :             + m[3][2] * other.m[2][3];
+<span class="lineNum">     484 </span>            :     m[3][2] = m[0][2] * other.m[3][0]
+<span class="lineNum">     485 </span>            :             + m[1][2] * other.m[3][1]
+<span class="lineNum">     486 </span>            :             + m[2][2] * other.m[3][2]
+<span class="lineNum">     487 </span>            :             + m[3][2] * other.m[3][3];
+<span class="lineNum">     488 </span>            :     m[0][2] = m0;
+<span class="lineNum">     489 </span>            :     m[1][2] = m1;
+<span class="lineNum">     490 </span>            :     m[2][2] = m2;
+<span class="lineNum">     491 </span>            : 
+<span class="lineNum">     492 </span>            :     m0 = m[0][3] * other.m[0][0]
+<span class="lineNum">     493 </span>            :             + m[1][3] * other.m[0][1]
+<span class="lineNum">     494 </span>            :             + m[2][3] * other.m[0][2]
+<span class="lineNum">     495 </span>            :             + m[3][3] * other.m[0][3];
+<span class="lineNum">     496 </span>            :     m1 = m[0][3] * other.m[1][0]
+<span class="lineNum">     497 </span>            :             + m[1][3] * other.m[1][1]
+<span class="lineNum">     498 </span>            :             + m[2][3] * other.m[1][2]
+<span class="lineNum">     499 </span>            :             + m[3][3] * other.m[1][3];
+<span class="lineNum">     500 </span>            :     m2 = m[0][3] * other.m[2][0]
+<span class="lineNum">     501 </span>            :             + m[1][3] * other.m[2][1]
+<span class="lineNum">     502 </span>            :             + m[2][3] * other.m[2][2]
+<span class="lineNum">     503 </span>            :             + m[3][3] * other.m[2][3];
+<span class="lineNum">     504 </span>            :     m[3][3] = m[0][3] * other.m[3][0]
+<span class="lineNum">     505 </span>            :             + m[1][3] * other.m[3][1]
+<span class="lineNum">     506 </span>            :             + m[2][3] * other.m[3][2]
+<span class="lineNum">     507 </span>            :             + m[3][3] * other.m[3][3];
+<span class="lineNum">     508 </span>            :     m[0][3] = m0;
+<span class="lineNum">     509 </span>            :     m[1][3] = m1;
+<span class="lineNum">     510 </span>            :     m[2][3] = m2;
+<span class="lineNum">     511 </span>            :     return *this;
+<span class="lineNum">     512 </span>            : }
+<span class="lineNum">     513 </span>            : 
+<span class="lineNum">     514 </span>            : inline QMatrix4x4&amp; QMatrix4x4::operator*=(float factor)
+<span class="lineNum">     515 </span>            : {
+<span class="lineNum">     516 </span>            :     m[0][0] *= factor;
+<span class="lineNum">     517 </span>            :     m[0][1] *= factor;
+<span class="lineNum">     518 </span>            :     m[0][2] *= factor;
+<span class="lineNum">     519 </span>            :     m[0][3] *= factor;
+<span class="lineNum">     520 </span>            :     m[1][0] *= factor;
+<span class="lineNum">     521 </span>            :     m[1][1] *= factor;
+<span class="lineNum">     522 </span>            :     m[1][2] *= factor;
+<span class="lineNum">     523 </span>            :     m[1][3] *= factor;
+<span class="lineNum">     524 </span>            :     m[2][0] *= factor;
+<span class="lineNum">     525 </span>            :     m[2][1] *= factor;
+<span class="lineNum">     526 </span>            :     m[2][2] *= factor;
+<span class="lineNum">     527 </span>            :     m[2][3] *= factor;
+<span class="lineNum">     528 </span>            :     m[3][0] *= factor;
+<span class="lineNum">     529 </span>            :     m[3][1] *= factor;
+<span class="lineNum">     530 </span>            :     m[3][2] *= factor;
+<span class="lineNum">     531 </span>            :     m[3][3] *= factor;
+<span class="lineNum">     532 </span>            :     flagBits = General;
+<span class="lineNum">     533 </span>            :     return *this;
+<span class="lineNum">     534 </span>            : }
+<span class="lineNum">     535 </span>            : 
+<span class="lineNum">     536 </span>            : inline bool QMatrix4x4::operator==(const QMatrix4x4&amp; other) const
+<span class="lineNum">     537 </span>            : {
+<span class="lineNum">     538 </span>            :     return m[0][0] == other.m[0][0] &amp;&amp;
+<span class="lineNum">     539 </span>            :            m[0][1] == other.m[0][1] &amp;&amp;
+<span class="lineNum">     540 </span>            :            m[0][2] == other.m[0][2] &amp;&amp;
+<span class="lineNum">     541 </span>            :            m[0][3] == other.m[0][3] &amp;&amp;
+<span class="lineNum">     542 </span>            :            m[1][0] == other.m[1][0] &amp;&amp;
+<span class="lineNum">     543 </span>            :            m[1][1] == other.m[1][1] &amp;&amp;
+<span class="lineNum">     544 </span>            :            m[1][2] == other.m[1][2] &amp;&amp;
+<span class="lineNum">     545 </span>            :            m[1][3] == other.m[1][3] &amp;&amp;
+<span class="lineNum">     546 </span>            :            m[2][0] == other.m[2][0] &amp;&amp;
+<span class="lineNum">     547 </span>            :            m[2][1] == other.m[2][1] &amp;&amp;
+<span class="lineNum">     548 </span>            :            m[2][2] == other.m[2][2] &amp;&amp;
+<span class="lineNum">     549 </span>            :            m[2][3] == other.m[2][3] &amp;&amp;
+<span class="lineNum">     550 </span>            :            m[3][0] == other.m[3][0] &amp;&amp;
+<span class="lineNum">     551 </span>            :            m[3][1] == other.m[3][1] &amp;&amp;
+<span class="lineNum">     552 </span>            :            m[3][2] == other.m[3][2] &amp;&amp;
+<span class="lineNum">     553 </span>            :            m[3][3] == other.m[3][3];
+<span class="lineNum">     554 </span>            : }
+<span class="lineNum">     555 </span>            : 
+<span class="lineNum">     556 </span>            : inline bool QMatrix4x4::operator!=(const QMatrix4x4&amp; other) const
+<span class="lineNum">     557 </span>            : {
+<span class="lineNum">     558 </span>            :     return m[0][0] != other.m[0][0] ||
+<span class="lineNum">     559 </span>            :            m[0][1] != other.m[0][1] ||
+<span class="lineNum">     560 </span>            :            m[0][2] != other.m[0][2] ||
+<span class="lineNum">     561 </span>            :            m[0][3] != other.m[0][3] ||
+<span class="lineNum">     562 </span>            :            m[1][0] != other.m[1][0] ||
+<span class="lineNum">     563 </span>            :            m[1][1] != other.m[1][1] ||
+<span class="lineNum">     564 </span>            :            m[1][2] != other.m[1][2] ||
+<span class="lineNum">     565 </span>            :            m[1][3] != other.m[1][3] ||
+<span class="lineNum">     566 </span>            :            m[2][0] != other.m[2][0] ||
+<span class="lineNum">     567 </span>            :            m[2][1] != other.m[2][1] ||
+<span class="lineNum">     568 </span>            :            m[2][2] != other.m[2][2] ||
+<span class="lineNum">     569 </span>            :            m[2][3] != other.m[2][3] ||
+<span class="lineNum">     570 </span>            :            m[3][0] != other.m[3][0] ||
+<span class="lineNum">     571 </span>            :            m[3][1] != other.m[3][1] ||
+<span class="lineNum">     572 </span>            :            m[3][2] != other.m[3][2] ||
+<span class="lineNum">     573 </span>            :            m[3][3] != other.m[3][3];
+<span class="lineNum">     574 </span>            : }
+<span class="lineNum">     575 </span>            : 
+<span class="lineNum">     576 </span>            : inline QMatrix4x4 operator+(const QMatrix4x4&amp; m1, const QMatrix4x4&amp; m2)
+<span class="lineNum">     577 </span>            : {
+<span class="lineNum">     578 </span>            :     QMatrix4x4 m(1);
+<span class="lineNum">     579 </span>            :     m.m[0][0] = m1.m[0][0] + m2.m[0][0];
+<span class="lineNum">     580 </span>            :     m.m[0][1] = m1.m[0][1] + m2.m[0][1];
+<span class="lineNum">     581 </span>            :     m.m[0][2] = m1.m[0][2] + m2.m[0][2];
+<span class="lineNum">     582 </span>            :     m.m[0][3] = m1.m[0][3] + m2.m[0][3];
+<span class="lineNum">     583 </span>            :     m.m[1][0] = m1.m[1][0] + m2.m[1][0];
+<span class="lineNum">     584 </span>            :     m.m[1][1] = m1.m[1][1] + m2.m[1][1];
+<span class="lineNum">     585 </span>            :     m.m[1][2] = m1.m[1][2] + m2.m[1][2];
+<span class="lineNum">     586 </span>            :     m.m[1][3] = m1.m[1][3] + m2.m[1][3];
+<span class="lineNum">     587 </span>            :     m.m[2][0] = m1.m[2][0] + m2.m[2][0];
+<span class="lineNum">     588 </span>            :     m.m[2][1] = m1.m[2][1] + m2.m[2][1];
+<span class="lineNum">     589 </span>            :     m.m[2][2] = m1.m[2][2] + m2.m[2][2];
+<span class="lineNum">     590 </span>            :     m.m[2][3] = m1.m[2][3] + m2.m[2][3];
+<span class="lineNum">     591 </span>            :     m.m[3][0] = m1.m[3][0] + m2.m[3][0];
+<span class="lineNum">     592 </span>            :     m.m[3][1] = m1.m[3][1] + m2.m[3][1];
+<span class="lineNum">     593 </span>            :     m.m[3][2] = m1.m[3][2] + m2.m[3][2];
+<span class="lineNum">     594 </span>            :     m.m[3][3] = m1.m[3][3] + m2.m[3][3];
+<span class="lineNum">     595 </span>            :     m.flagBits = QMatrix4x4::General;
+<span class="lineNum">     596 </span>            :     return m;
+<span class="lineNum">     597 </span>            : }
+<span class="lineNum">     598 </span>            : 
+<span class="lineNum">     599 </span>            : inline QMatrix4x4 operator-(const QMatrix4x4&amp; m1, const QMatrix4x4&amp; m2)
+<span class="lineNum">     600 </span>            : {
+<span class="lineNum">     601 </span>            :     QMatrix4x4 m(1);
+<span class="lineNum">     602 </span>            :     m.m[0][0] = m1.m[0][0] - m2.m[0][0];
+<span class="lineNum">     603 </span>            :     m.m[0][1] = m1.m[0][1] - m2.m[0][1];
+<span class="lineNum">     604 </span>            :     m.m[0][2] = m1.m[0][2] - m2.m[0][2];
+<span class="lineNum">     605 </span>            :     m.m[0][3] = m1.m[0][3] - m2.m[0][3];
+<span class="lineNum">     606 </span>            :     m.m[1][0] = m1.m[1][0] - m2.m[1][0];
+<span class="lineNum">     607 </span>            :     m.m[1][1] = m1.m[1][1] - m2.m[1][1];
+<span class="lineNum">     608 </span>            :     m.m[1][2] = m1.m[1][2] - m2.m[1][2];
+<span class="lineNum">     609 </span>            :     m.m[1][3] = m1.m[1][3] - m2.m[1][3];
+<span class="lineNum">     610 </span>            :     m.m[2][0] = m1.m[2][0] - m2.m[2][0];
+<span class="lineNum">     611 </span>            :     m.m[2][1] = m1.m[2][1] - m2.m[2][1];
+<span class="lineNum">     612 </span>            :     m.m[2][2] = m1.m[2][2] - m2.m[2][2];
+<span class="lineNum">     613 </span>            :     m.m[2][3] = m1.m[2][3] - m2.m[2][3];
+<span class="lineNum">     614 </span>            :     m.m[3][0] = m1.m[3][0] - m2.m[3][0];
+<span class="lineNum">     615 </span>            :     m.m[3][1] = m1.m[3][1] - m2.m[3][1];
+<span class="lineNum">     616 </span>            :     m.m[3][2] = m1.m[3][2] - m2.m[3][2];
+<span class="lineNum">     617 </span>            :     m.m[3][3] = m1.m[3][3] - m2.m[3][3];
+<span class="lineNum">     618 </span>            :     m.flagBits = QMatrix4x4::General;
+<span class="lineNum">     619 </span>            :     return m;
+<a name="620"><span class="lineNum">     620 </span>            : }</a>
+<span class="lineNum">     621 </span>            : 
+<span class="lineNum">     622 </span>            : inline QMatrix4x4 operator*(const QMatrix4x4&amp; m1, const QMatrix4x4&amp; m2)
+<span class="lineNum">     623 </span>            : {
+<span class="lineNum">     624 </span><span class="lineCov">      25551 :     int flagBits = m1.flagBits | m2.flagBits;</span>
+<span class="lineNum">     625 </span><span class="lineCov">      25551 :     if (flagBits &lt; QMatrix4x4::Rotation2D) {</span>
+<span class="lineNum">     626 </span><span class="lineNoCov">          0 :         QMatrix4x4 m = m1;</span>
+<span class="lineNum">     627 </span><span class="lineNoCov">          0 :         m.m[3][0] += m.m[0][0] * m2.m[3][0];</span>
+<span class="lineNum">     628 </span><span class="lineNoCov">          0 :         m.m[3][1] += m.m[1][1] * m2.m[3][1];</span>
+<span class="lineNum">     629 </span><span class="lineNoCov">          0 :         m.m[3][2] += m.m[2][2] * m2.m[3][2];</span>
+<span class="lineNum">     630 </span>            : 
+<span class="lineNum">     631 </span><span class="lineNoCov">          0 :         m.m[0][0] *= m2.m[0][0];</span>
+<span class="lineNum">     632 </span><span class="lineNoCov">          0 :         m.m[1][1] *= m2.m[1][1];</span>
+<span class="lineNum">     633 </span><span class="lineNoCov">          0 :         m.m[2][2] *= m2.m[2][2];</span>
+<span class="lineNum">     634 </span><span class="lineNoCov">          0 :         m.flagBits = flagBits;</span>
+<span class="lineNum">     635 </span><span class="lineNoCov">          0 :         return m;</span>
+<span class="lineNum">     636 </span>            :     }
+<span class="lineNum">     637 </span>            : 
+<span class="lineNum">     638 </span><span class="lineCov">      25551 :     QMatrix4x4 m(1);</span>
+<span class="lineNum">     639 </span><span class="lineCov">      25551 :     m.m[0][0] = m1.m[0][0] * m2.m[0][0]</span>
+<span class="lineNum">     640 </span>            :               + m1.m[1][0] * m2.m[0][1]
+<span class="lineNum">     641 </span>            :               + m1.m[2][0] * m2.m[0][2]
+<span class="lineNum">     642 </span>            :               + m1.m[3][0] * m2.m[0][3];
+<span class="lineNum">     643 </span><span class="lineCov">      25551 :     m.m[0][1] = m1.m[0][1] * m2.m[0][0]</span>
+<span class="lineNum">     644 </span>            :               + m1.m[1][1] * m2.m[0][1]
+<span class="lineNum">     645 </span>            :               + m1.m[2][1] * m2.m[0][2]
+<span class="lineNum">     646 </span>            :               + m1.m[3][1] * m2.m[0][3];
+<span class="lineNum">     647 </span><span class="lineCov">      25551 :     m.m[0][2] = m1.m[0][2] * m2.m[0][0]</span>
+<span class="lineNum">     648 </span>            :               + m1.m[1][2] * m2.m[0][1]
+<span class="lineNum">     649 </span>            :               + m1.m[2][2] * m2.m[0][2]
+<span class="lineNum">     650 </span>            :               + m1.m[3][2] * m2.m[0][3];
+<span class="lineNum">     651 </span><span class="lineCov">      25551 :     m.m[0][3] = m1.m[0][3] * m2.m[0][0]</span>
+<span class="lineNum">     652 </span>            :               + m1.m[1][3] * m2.m[0][1]
+<span class="lineNum">     653 </span>            :               + m1.m[2][3] * m2.m[0][2]
+<span class="lineNum">     654 </span>            :               + m1.m[3][3] * m2.m[0][3];
+<span class="lineNum">     655 </span>            : 
+<span class="lineNum">     656 </span><span class="lineCov">      25551 :     m.m[1][0] = m1.m[0][0] * m2.m[1][0]</span>
+<span class="lineNum">     657 </span>            :               + m1.m[1][0] * m2.m[1][1]
+<span class="lineNum">     658 </span>            :               + m1.m[2][0] * m2.m[1][2]
+<span class="lineNum">     659 </span>            :               + m1.m[3][0] * m2.m[1][3];
+<span class="lineNum">     660 </span><span class="lineCov">      25551 :     m.m[1][1] = m1.m[0][1] * m2.m[1][0]</span>
+<span class="lineNum">     661 </span>            :               + m1.m[1][1] * m2.m[1][1]
+<span class="lineNum">     662 </span>            :               + m1.m[2][1] * m2.m[1][2]
+<span class="lineNum">     663 </span>            :               + m1.m[3][1] * m2.m[1][3];
+<span class="lineNum">     664 </span><span class="lineCov">      25551 :     m.m[1][2] = m1.m[0][2] * m2.m[1][0]</span>
+<span class="lineNum">     665 </span>            :               + m1.m[1][2] * m2.m[1][1]
+<span class="lineNum">     666 </span>            :               + m1.m[2][2] * m2.m[1][2]
+<span class="lineNum">     667 </span>            :               + m1.m[3][2] * m2.m[1][3];
+<span class="lineNum">     668 </span><span class="lineCov">      25551 :     m.m[1][3] = m1.m[0][3] * m2.m[1][0]</span>
+<span class="lineNum">     669 </span>            :               + m1.m[1][3] * m2.m[1][1]
+<span class="lineNum">     670 </span>            :               + m1.m[2][3] * m2.m[1][2]
+<span class="lineNum">     671 </span>            :               + m1.m[3][3] * m2.m[1][3];
+<span class="lineNum">     672 </span>            : 
+<span class="lineNum">     673 </span><span class="lineCov">      25551 :     m.m[2][0] = m1.m[0][0] * m2.m[2][0]</span>
+<span class="lineNum">     674 </span>            :               + m1.m[1][0] * m2.m[2][1]
+<span class="lineNum">     675 </span>            :               + m1.m[2][0] * m2.m[2][2]
+<span class="lineNum">     676 </span>            :               + m1.m[3][0] * m2.m[2][3];
+<span class="lineNum">     677 </span><span class="lineCov">      25551 :     m.m[2][1] = m1.m[0][1] * m2.m[2][0]</span>
+<span class="lineNum">     678 </span>            :               + m1.m[1][1] * m2.m[2][1]
+<span class="lineNum">     679 </span>            :               + m1.m[2][1] * m2.m[2][2]
+<span class="lineNum">     680 </span>            :               + m1.m[3][1] * m2.m[2][3];
+<span class="lineNum">     681 </span><span class="lineCov">      25551 :     m.m[2][2] = m1.m[0][2] * m2.m[2][0]</span>
+<span class="lineNum">     682 </span>            :               + m1.m[1][2] * m2.m[2][1]
+<span class="lineNum">     683 </span>            :               + m1.m[2][2] * m2.m[2][2]
+<span class="lineNum">     684 </span>            :               + m1.m[3][2] * m2.m[2][3];
+<span class="lineNum">     685 </span><span class="lineCov">      25551 :     m.m[2][3] = m1.m[0][3] * m2.m[2][0]</span>
+<span class="lineNum">     686 </span>            :               + m1.m[1][3] * m2.m[2][1]
+<span class="lineNum">     687 </span>            :               + m1.m[2][3] * m2.m[2][2]
+<span class="lineNum">     688 </span>            :               + m1.m[3][3] * m2.m[2][3];
+<span class="lineNum">     689 </span>            : 
+<span class="lineNum">     690 </span><span class="lineCov">      25551 :     m.m[3][0] = m1.m[0][0] * m2.m[3][0]</span>
+<span class="lineNum">     691 </span>            :               + m1.m[1][0] * m2.m[3][1]
+<span class="lineNum">     692 </span>            :               + m1.m[2][0] * m2.m[3][2]
+<span class="lineNum">     693 </span>            :               + m1.m[3][0] * m2.m[3][3];
+<span class="lineNum">     694 </span><span class="lineCov">      25551 :     m.m[3][1] = m1.m[0][1] * m2.m[3][0]</span>
+<span class="lineNum">     695 </span>            :               + m1.m[1][1] * m2.m[3][1]
+<span class="lineNum">     696 </span>            :               + m1.m[2][1] * m2.m[3][2]
+<span class="lineNum">     697 </span>            :               + m1.m[3][1] * m2.m[3][3];
+<span class="lineNum">     698 </span><span class="lineCov">      25551 :     m.m[3][2] = m1.m[0][2] * m2.m[3][0]</span>
+<span class="lineNum">     699 </span>            :               + m1.m[1][2] * m2.m[3][1]
+<span class="lineNum">     700 </span>            :               + m1.m[2][2] * m2.m[3][2]
+<span class="lineNum">     701 </span>            :               + m1.m[3][2] * m2.m[3][3];
+<span class="lineNum">     702 </span><span class="lineCov">      25551 :     m.m[3][3] = m1.m[0][3] * m2.m[3][0]</span>
+<span class="lineNum">     703 </span>            :               + m1.m[1][3] * m2.m[3][1]
+<span class="lineNum">     704 </span>            :               + m1.m[2][3] * m2.m[3][2]
+<span class="lineNum">     705 </span>            :               + m1.m[3][3] * m2.m[3][3];
+<span class="lineNum">     706 </span><span class="lineCov">      25551 :     m.flagBits = flagBits;</span>
+<span class="lineNum">     707 </span><span class="lineCov">      25551 :     return m;</span>
+<span class="lineNum">     708 </span><span class="lineCov">      25551 : }</span>
+<span class="lineNum">     709 </span>            : 
+<span class="lineNum">     710 </span>            : #ifndef QT_NO_VECTOR3D
+<span class="lineNum">     711 </span>            : 
+<span class="lineNum">     712 </span>            : inline QVector3D operator*(const QVector3D&amp; vector, const QMatrix4x4&amp; matrix)
+<span class="lineNum">     713 </span>            : {
+<span class="lineNum">     714 </span>            :     float x, y, z, w;
+<span class="lineNum">     715 </span>            :     x = vector.x() * matrix.m[0][0] +
+<span class="lineNum">     716 </span>            :         vector.y() * matrix.m[0][1] +
+<span class="lineNum">     717 </span>            :         vector.z() * matrix.m[0][2] +
+<span class="lineNum">     718 </span>            :         matrix.m[0][3];
+<span class="lineNum">     719 </span>            :     y = vector.x() * matrix.m[1][0] +
+<span class="lineNum">     720 </span>            :         vector.y() * matrix.m[1][1] +
+<span class="lineNum">     721 </span>            :         vector.z() * matrix.m[1][2] +
+<span class="lineNum">     722 </span>            :         matrix.m[1][3];
+<span class="lineNum">     723 </span>            :     z = vector.x() * matrix.m[2][0] +
+<span class="lineNum">     724 </span>            :         vector.y() * matrix.m[2][1] +
+<span class="lineNum">     725 </span>            :         vector.z() * matrix.m[2][2] +
+<span class="lineNum">     726 </span>            :         matrix.m[2][3];
+<span class="lineNum">     727 </span>            :     w = vector.x() * matrix.m[3][0] +
+<span class="lineNum">     728 </span>            :         vector.y() * matrix.m[3][1] +
+<span class="lineNum">     729 </span>            :         vector.z() * matrix.m[3][2] +
+<span class="lineNum">     730 </span>            :         matrix.m[3][3];
+<span class="lineNum">     731 </span>            :     if (w == 1.0f)
+<span class="lineNum">     732 </span>            :         return QVector3D(x, y, z);
+<span class="lineNum">     733 </span>            :     else
+<span class="lineNum">     734 </span>            :         return QVector3D(x / w, y / w, z / w);
+<span class="lineNum">     735 </span>            : }
+<span class="lineNum">     736 </span>            : 
+<span class="lineNum">     737 </span>            : inline QVector3D operator*(const QMatrix4x4&amp; matrix, const QVector3D&amp; vector)
+<span class="lineNum">     738 </span>            : {
+<span class="lineNum">     739 </span>            :     float x, y, z, w;
+<span class="lineNum">     740 </span>            :     if (matrix.flagBits == QMatrix4x4::Identity) {
+<span class="lineNum">     741 </span>            :         return vector;
+<span class="lineNum">     742 </span>            :     } else if (matrix.flagBits &lt; QMatrix4x4::Rotation2D) {
+<span class="lineNum">     743 </span>            :         // Translation | Scale
+<span class="lineNum">     744 </span>            :         return QVector3D(vector.x() * matrix.m[0][0] + matrix.m[3][0],
+<span class="lineNum">     745 </span>            :                          vector.y() * matrix.m[1][1] + matrix.m[3][1],
+<span class="lineNum">     746 </span>            :                          vector.z() * matrix.m[2][2] + matrix.m[3][2]);
+<span class="lineNum">     747 </span>            :     } else if (matrix.flagBits &lt; QMatrix4x4::Rotation) {
+<span class="lineNum">     748 </span>            :         // Translation | Scale | Rotation2D
+<span class="lineNum">     749 </span>            :         return QVector3D(vector.x() * matrix.m[0][0] + vector.y() * matrix.m[1][0] + matrix.m[3][0],
+<span class="lineNum">     750 </span>            :                          vector.x() * matrix.m[0][1] + vector.y() * matrix.m[1][1] + matrix.m[3][1],
+<span class="lineNum">     751 </span>            :                          vector.z() * matrix.m[2][2] + matrix.m[3][2]);
+<span class="lineNum">     752 </span>            :     } else {
+<span class="lineNum">     753 </span>            :         x = vector.x() * matrix.m[0][0] +
+<span class="lineNum">     754 </span>            :             vector.y() * matrix.m[1][0] +
+<span class="lineNum">     755 </span>            :             vector.z() * matrix.m[2][0] +
+<span class="lineNum">     756 </span>            :             matrix.m[3][0];
+<span class="lineNum">     757 </span>            :         y = vector.x() * matrix.m[0][1] +
+<span class="lineNum">     758 </span>            :             vector.y() * matrix.m[1][1] +
+<span class="lineNum">     759 </span>            :             vector.z() * matrix.m[2][1] +
+<span class="lineNum">     760 </span>            :             matrix.m[3][1];
+<span class="lineNum">     761 </span>            :         z = vector.x() * matrix.m[0][2] +
+<span class="lineNum">     762 </span>            :             vector.y() * matrix.m[1][2] +
+<span class="lineNum">     763 </span>            :             vector.z() * matrix.m[2][2] +
+<span class="lineNum">     764 </span>            :             matrix.m[3][2];
+<span class="lineNum">     765 </span>            :         w = vector.x() * matrix.m[0][3] +
+<span class="lineNum">     766 </span>            :             vector.y() * matrix.m[1][3] +
+<span class="lineNum">     767 </span>            :             vector.z() * matrix.m[2][3] +
+<span class="lineNum">     768 </span>            :             matrix.m[3][3];
+<span class="lineNum">     769 </span>            :         if (w == 1.0f)
+<span class="lineNum">     770 </span>            :             return QVector3D(x, y, z);
+<span class="lineNum">     771 </span>            :         else
+<span class="lineNum">     772 </span>            :             return QVector3D(x / w, y / w, z / w);
+<span class="lineNum">     773 </span>            :     }
+<span class="lineNum">     774 </span>            : }
+<span class="lineNum">     775 </span>            : 
+<span class="lineNum">     776 </span>            : #endif
+<span class="lineNum">     777 </span>            : 
+<span class="lineNum">     778 </span>            : #ifndef QT_NO_VECTOR4D
+<span class="lineNum">     779 </span>            : 
+<span class="lineNum">     780 </span>            : inline QVector4D operator*(const QVector4D&amp; vector, const QMatrix4x4&amp; matrix)
+<span class="lineNum">     781 </span>            : {
+<span class="lineNum">     782 </span>            :     float x, y, z, w;
+<span class="lineNum">     783 </span>            :     x = vector.x() * matrix.m[0][0] +
+<span class="lineNum">     784 </span>            :         vector.y() * matrix.m[0][1] +
+<span class="lineNum">     785 </span>            :         vector.z() * matrix.m[0][2] +
+<span class="lineNum">     786 </span>            :         vector.w() * matrix.m[0][3];
+<span class="lineNum">     787 </span>            :     y = vector.x() * matrix.m[1][0] +
+<span class="lineNum">     788 </span>            :         vector.y() * matrix.m[1][1] +
+<span class="lineNum">     789 </span>            :         vector.z() * matrix.m[1][2] +
+<span class="lineNum">     790 </span>            :         vector.w() * matrix.m[1][3];
+<span class="lineNum">     791 </span>            :     z = vector.x() * matrix.m[2][0] +
+<span class="lineNum">     792 </span>            :         vector.y() * matrix.m[2][1] +
+<span class="lineNum">     793 </span>            :         vector.z() * matrix.m[2][2] +
+<span class="lineNum">     794 </span>            :         vector.w() * matrix.m[2][3];
+<span class="lineNum">     795 </span>            :     w = vector.x() * matrix.m[3][0] +
+<span class="lineNum">     796 </span>            :         vector.y() * matrix.m[3][1] +
+<span class="lineNum">     797 </span>            :         vector.z() * matrix.m[3][2] +
+<span class="lineNum">     798 </span>            :         vector.w() * matrix.m[3][3];
+<span class="lineNum">     799 </span>            :     return QVector4D(x, y, z, w);
+<span class="lineNum">     800 </span>            : }
+<span class="lineNum">     801 </span>            : 
+<span class="lineNum">     802 </span>            : inline QVector4D operator*(const QMatrix4x4&amp; matrix, const QVector4D&amp; vector)
+<span class="lineNum">     803 </span>            : {
+<span class="lineNum">     804 </span>            :     float x, y, z, w;
+<span class="lineNum">     805 </span>            :     x = vector.x() * matrix.m[0][0] +
+<span class="lineNum">     806 </span>            :         vector.y() * matrix.m[1][0] +
+<span class="lineNum">     807 </span>            :         vector.z() * matrix.m[2][0] +
+<span class="lineNum">     808 </span>            :         vector.w() * matrix.m[3][0];
+<span class="lineNum">     809 </span>            :     y = vector.x() * matrix.m[0][1] +
+<span class="lineNum">     810 </span>            :         vector.y() * matrix.m[1][1] +
+<span class="lineNum">     811 </span>            :         vector.z() * matrix.m[2][1] +
+<span class="lineNum">     812 </span>            :         vector.w() * matrix.m[3][1];
+<span class="lineNum">     813 </span>            :     z = vector.x() * matrix.m[0][2] +
+<span class="lineNum">     814 </span>            :         vector.y() * matrix.m[1][2] +
+<span class="lineNum">     815 </span>            :         vector.z() * matrix.m[2][2] +
+<span class="lineNum">     816 </span>            :         vector.w() * matrix.m[3][2];
+<span class="lineNum">     817 </span>            :     w = vector.x() * matrix.m[0][3] +
+<span class="lineNum">     818 </span>            :         vector.y() * matrix.m[1][3] +
+<span class="lineNum">     819 </span>            :         vector.z() * matrix.m[2][3] +
+<span class="lineNum">     820 </span>            :         vector.w() * matrix.m[3][3];
+<span class="lineNum">     821 </span>            :     return QVector4D(x, y, z, w);
+<span class="lineNum">     822 </span>            : }
+<span class="lineNum">     823 </span>            : 
+<span class="lineNum">     824 </span>            : #endif
+<span class="lineNum">     825 </span>            : 
+<span class="lineNum">     826 </span>            : inline QPoint operator*(const QPoint&amp; point, const QMatrix4x4&amp; matrix)
+<span class="lineNum">     827 </span>            : {
+<span class="lineNum">     828 </span>            :     float xin, yin;
+<span class="lineNum">     829 </span>            :     float x, y, w;
+<span class="lineNum">     830 </span>            :     xin = point.x();
+<span class="lineNum">     831 </span>            :     yin = point.y();
+<span class="lineNum">     832 </span>            :     x = xin * matrix.m[0][0] +
+<span class="lineNum">     833 </span>            :         yin * matrix.m[0][1] +
+<span class="lineNum">     834 </span>            :         matrix.m[0][3];
+<span class="lineNum">     835 </span>            :     y = xin * matrix.m[1][0] +
+<span class="lineNum">     836 </span>            :         yin * matrix.m[1][1] +
+<span class="lineNum">     837 </span>            :         matrix.m[1][3];
+<span class="lineNum">     838 </span>            :     w = xin * matrix.m[3][0] +
+<span class="lineNum">     839 </span>            :         yin * matrix.m[3][1] +
+<span class="lineNum">     840 </span>            :         matrix.m[3][3];
+<span class="lineNum">     841 </span>            :     if (w == 1.0f)
+<span class="lineNum">     842 </span>            :         return QPoint(qRound(x), qRound(y));
+<span class="lineNum">     843 </span>            :     else
+<span class="lineNum">     844 </span>            :         return QPoint(qRound(x / w), qRound(y / w));
+<span class="lineNum">     845 </span>            : }
+<span class="lineNum">     846 </span>            : 
+<span class="lineNum">     847 </span>            : inline QPointF operator*(const QPointF&amp; point, const QMatrix4x4&amp; matrix)
+<span class="lineNum">     848 </span>            : {
+<span class="lineNum">     849 </span>            :     float xin, yin;
+<span class="lineNum">     850 </span>            :     float x, y, w;
+<span class="lineNum">     851 </span>            :     xin = point.x();
+<span class="lineNum">     852 </span>            :     yin = point.y();
+<span class="lineNum">     853 </span>            :     x = xin * matrix.m[0][0] +
+<span class="lineNum">     854 </span>            :         yin * matrix.m[0][1] +
+<span class="lineNum">     855 </span>            :         matrix.m[0][3];
+<span class="lineNum">     856 </span>            :     y = xin * matrix.m[1][0] +
+<span class="lineNum">     857 </span>            :         yin * matrix.m[1][1] +
+<span class="lineNum">     858 </span>            :         matrix.m[1][3];
+<span class="lineNum">     859 </span>            :     w = xin * matrix.m[3][0] +
+<span class="lineNum">     860 </span>            :         yin * matrix.m[3][1] +
+<span class="lineNum">     861 </span>            :         matrix.m[3][3];
+<span class="lineNum">     862 </span>            :     if (w == 1.0f) {
+<span class="lineNum">     863 </span>            :         return QPointF(float(x), float(y));
+<span class="lineNum">     864 </span>            :     } else {
+<span class="lineNum">     865 </span>            :         return QPointF(float(x / w), float(y / w));
+<span class="lineNum">     866 </span>            :     }
+<span class="lineNum">     867 </span>            : }
+<span class="lineNum">     868 </span>            : 
+<span class="lineNum">     869 </span>            : inline QPoint operator*(const QMatrix4x4&amp; matrix, const QPoint&amp; point)
+<span class="lineNum">     870 </span>            : {
+<span class="lineNum">     871 </span>            :     float xin, yin;
+<span class="lineNum">     872 </span>            :     float x, y, w;
+<span class="lineNum">     873 </span>            :     xin = point.x();
+<span class="lineNum">     874 </span>            :     yin = point.y();
+<span class="lineNum">     875 </span>            :     if (matrix.flagBits == QMatrix4x4::Identity) {
+<span class="lineNum">     876 </span>            :         return point;
+<span class="lineNum">     877 </span>            :     } else if (matrix.flagBits &lt; QMatrix4x4::Rotation2D) {
+<span class="lineNum">     878 </span>            :         // Translation | Scale
+<span class="lineNum">     879 </span>            :         return QPoint(qRound(xin * matrix.m[0][0] + matrix.m[3][0]),
+<span class="lineNum">     880 </span>            :                       qRound(yin * matrix.m[1][1] + matrix.m[3][1]));
+<span class="lineNum">     881 </span>            :     } else if (matrix.flagBits &lt; QMatrix4x4::Perspective) {
+<span class="lineNum">     882 </span>            :         return QPoint(qRound(xin * matrix.m[0][0] + yin * matrix.m[1][0] + matrix.m[3][0]),
+<span class="lineNum">     883 </span>            :                       qRound(xin * matrix.m[0][1] + yin * matrix.m[1][1] + matrix.m[3][1]));
+<span class="lineNum">     884 </span>            :     } else {
+<span class="lineNum">     885 </span>            :         x = xin * matrix.m[0][0] +
+<span class="lineNum">     886 </span>            :             yin * matrix.m[1][0] +
+<span class="lineNum">     887 </span>            :             matrix.m[3][0];
+<span class="lineNum">     888 </span>            :         y = xin * matrix.m[0][1] +
+<span class="lineNum">     889 </span>            :             yin * matrix.m[1][1] +
+<span class="lineNum">     890 </span>            :             matrix.m[3][1];
+<span class="lineNum">     891 </span>            :         w = xin * matrix.m[0][3] +
+<span class="lineNum">     892 </span>            :             yin * matrix.m[1][3] +
+<span class="lineNum">     893 </span>            :             matrix.m[3][3];
+<span class="lineNum">     894 </span>            :         if (w == 1.0f)
+<span class="lineNum">     895 </span>            :             return QPoint(qRound(x), qRound(y));
+<span class="lineNum">     896 </span>            :         else
+<span class="lineNum">     897 </span>            :             return QPoint(qRound(x / w), qRound(y / w));
+<span class="lineNum">     898 </span>            :     }
+<span class="lineNum">     899 </span>            : }
+<span class="lineNum">     900 </span>            : 
+<span class="lineNum">     901 </span>            : inline QPointF operator*(const QMatrix4x4&amp; matrix, const QPointF&amp; point)
+<span class="lineNum">     902 </span>            : {
+<span class="lineNum">     903 </span>            :     float xin, yin;
+<span class="lineNum">     904 </span>            :     float x, y, w;
+<span class="lineNum">     905 </span>            :     xin = point.x();
+<span class="lineNum">     906 </span>            :     yin = point.y();
+<span class="lineNum">     907 </span>            :     if (matrix.flagBits == QMatrix4x4::Identity) {
+<span class="lineNum">     908 </span>            :         return point;
+<span class="lineNum">     909 </span>            :     } else if (matrix.flagBits &lt; QMatrix4x4::Rotation2D) {
+<span class="lineNum">     910 </span>            :         // Translation | Scale
+<span class="lineNum">     911 </span>            :         return QPointF(xin * matrix.m[0][0] + matrix.m[3][0],
+<span class="lineNum">     912 </span>            :                        yin * matrix.m[1][1] + matrix.m[3][1]);
+<span class="lineNum">     913 </span>            :     } else if (matrix.flagBits &lt; QMatrix4x4::Perspective) {
+<span class="lineNum">     914 </span>            :         return QPointF(xin * matrix.m[0][0] + yin * matrix.m[1][0] + matrix.m[3][0],
+<span class="lineNum">     915 </span>            :                        xin * matrix.m[0][1] + yin * matrix.m[1][1] + matrix.m[3][1]);
+<span class="lineNum">     916 </span>            :     } else {
+<span class="lineNum">     917 </span>            :         x = xin * matrix.m[0][0] +
+<span class="lineNum">     918 </span>            :             yin * matrix.m[1][0] +
+<span class="lineNum">     919 </span>            :             matrix.m[3][0];
+<span class="lineNum">     920 </span>            :         y = xin * matrix.m[0][1] +
+<span class="lineNum">     921 </span>            :             yin * matrix.m[1][1] +
+<span class="lineNum">     922 </span>            :             matrix.m[3][1];
+<span class="lineNum">     923 </span>            :         w = xin * matrix.m[0][3] +
+<span class="lineNum">     924 </span>            :             yin * matrix.m[1][3] +
+<span class="lineNum">     925 </span>            :             matrix.m[3][3];
+<span class="lineNum">     926 </span>            :         if (w == 1.0f) {
+<span class="lineNum">     927 </span>            :             return QPointF(float(x), float(y));
+<span class="lineNum">     928 </span>            :         } else {
+<span class="lineNum">     929 </span>            :             return QPointF(float(x / w), float(y / w));
+<span class="lineNum">     930 </span>            :         }
+<span class="lineNum">     931 </span>            :     }
+<span class="lineNum">     932 </span>            : }
+<span class="lineNum">     933 </span>            : 
+<span class="lineNum">     934 </span>            : inline QMatrix4x4 operator-(const QMatrix4x4&amp; matrix)
+<span class="lineNum">     935 </span>            : {
+<span class="lineNum">     936 </span>            :     QMatrix4x4 m(1);
+<span class="lineNum">     937 </span>            :     m.m[0][0] = -matrix.m[0][0];
+<span class="lineNum">     938 </span>            :     m.m[0][1] = -matrix.m[0][1];
+<span class="lineNum">     939 </span>            :     m.m[0][2] = -matrix.m[0][2];
+<span class="lineNum">     940 </span>            :     m.m[0][3] = -matrix.m[0][3];
+<span class="lineNum">     941 </span>            :     m.m[1][0] = -matrix.m[1][0];
+<span class="lineNum">     942 </span>            :     m.m[1][1] = -matrix.m[1][1];
+<span class="lineNum">     943 </span>            :     m.m[1][2] = -matrix.m[1][2];
+<span class="lineNum">     944 </span>            :     m.m[1][3] = -matrix.m[1][3];
+<span class="lineNum">     945 </span>            :     m.m[2][0] = -matrix.m[2][0];
+<span class="lineNum">     946 </span>            :     m.m[2][1] = -matrix.m[2][1];
+<span class="lineNum">     947 </span>            :     m.m[2][2] = -matrix.m[2][2];
+<span class="lineNum">     948 </span>            :     m.m[2][3] = -matrix.m[2][3];
+<span class="lineNum">     949 </span>            :     m.m[3][0] = -matrix.m[3][0];
+<span class="lineNum">     950 </span>            :     m.m[3][1] = -matrix.m[3][1];
+<span class="lineNum">     951 </span>            :     m.m[3][2] = -matrix.m[3][2];
+<span class="lineNum">     952 </span>            :     m.m[3][3] = -matrix.m[3][3];
+<span class="lineNum">     953 </span>            :     m.flagBits = QMatrix4x4::General;
+<span class="lineNum">     954 </span>            :     return m;
+<span class="lineNum">     955 </span>            : }
+<span class="lineNum">     956 </span>            : 
+<span class="lineNum">     957 </span>            : inline QMatrix4x4 operator*(float factor, const QMatrix4x4&amp; matrix)
+<span class="lineNum">     958 </span>            : {
+<span class="lineNum">     959 </span>            :     QMatrix4x4 m(1);
+<span class="lineNum">     960 </span>            :     m.m[0][0] = matrix.m[0][0] * factor;
+<span class="lineNum">     961 </span>            :     m.m[0][1] = matrix.m[0][1] * factor;
+<span class="lineNum">     962 </span>            :     m.m[0][2] = matrix.m[0][2] * factor;
+<span class="lineNum">     963 </span>            :     m.m[0][3] = matrix.m[0][3] * factor;
+<span class="lineNum">     964 </span>            :     m.m[1][0] = matrix.m[1][0] * factor;
+<span class="lineNum">     965 </span>            :     m.m[1][1] = matrix.m[1][1] * factor;
+<span class="lineNum">     966 </span>            :     m.m[1][2] = matrix.m[1][2] * factor;
+<span class="lineNum">     967 </span>            :     m.m[1][3] = matrix.m[1][3] * factor;
+<span class="lineNum">     968 </span>            :     m.m[2][0] = matrix.m[2][0] * factor;
+<span class="lineNum">     969 </span>            :     m.m[2][1] = matrix.m[2][1] * factor;
+<span class="lineNum">     970 </span>            :     m.m[2][2] = matrix.m[2][2] * factor;
+<span class="lineNum">     971 </span>            :     m.m[2][3] = matrix.m[2][3] * factor;
+<span class="lineNum">     972 </span>            :     m.m[3][0] = matrix.m[3][0] * factor;
+<span class="lineNum">     973 </span>            :     m.m[3][1] = matrix.m[3][1] * factor;
+<span class="lineNum">     974 </span>            :     m.m[3][2] = matrix.m[3][2] * factor;
+<span class="lineNum">     975 </span>            :     m.m[3][3] = matrix.m[3][3] * factor;
+<span class="lineNum">     976 </span>            :     m.flagBits = QMatrix4x4::General;
+<span class="lineNum">     977 </span>            :     return m;
+<span class="lineNum">     978 </span>            : }
+<span class="lineNum">     979 </span>            : 
+<span class="lineNum">     980 </span>            : inline QMatrix4x4 operator*(const QMatrix4x4&amp; matrix, float factor)
+<span class="lineNum">     981 </span>            : {
+<span class="lineNum">     982 </span>            :     QMatrix4x4 m(1);
+<span class="lineNum">     983 </span>            :     m.m[0][0] = matrix.m[0][0] * factor;
+<span class="lineNum">     984 </span>            :     m.m[0][1] = matrix.m[0][1] * factor;
+<span class="lineNum">     985 </span>            :     m.m[0][2] = matrix.m[0][2] * factor;
+<span class="lineNum">     986 </span>            :     m.m[0][3] = matrix.m[0][3] * factor;
+<span class="lineNum">     987 </span>            :     m.m[1][0] = matrix.m[1][0] * factor;
+<span class="lineNum">     988 </span>            :     m.m[1][1] = matrix.m[1][1] * factor;
+<span class="lineNum">     989 </span>            :     m.m[1][2] = matrix.m[1][2] * factor;
+<span class="lineNum">     990 </span>            :     m.m[1][3] = matrix.m[1][3] * factor;
+<span class="lineNum">     991 </span>            :     m.m[2][0] = matrix.m[2][0] * factor;
+<span class="lineNum">     992 </span>            :     m.m[2][1] = matrix.m[2][1] * factor;
+<span class="lineNum">     993 </span>            :     m.m[2][2] = matrix.m[2][2] * factor;
+<span class="lineNum">     994 </span>            :     m.m[2][3] = matrix.m[2][3] * factor;
+<span class="lineNum">     995 </span>            :     m.m[3][0] = matrix.m[3][0] * factor;
+<span class="lineNum">     996 </span>            :     m.m[3][1] = matrix.m[3][1] * factor;
+<span class="lineNum">     997 </span>            :     m.m[3][2] = matrix.m[3][2] * factor;
+<span class="lineNum">     998 </span>            :     m.m[3][3] = matrix.m[3][3] * factor;
+<span class="lineNum">     999 </span>            :     m.flagBits = QMatrix4x4::General;
+<span class="lineNum">    1000 </span>            :     return m;
+<span class="lineNum">    1001 </span>            : }
+<span class="lineNum">    1002 </span>            : 
+<span class="lineNum">    1003 </span>            : inline bool qFuzzyCompare(const QMatrix4x4&amp; m1, const QMatrix4x4&amp; m2)
+<span class="lineNum">    1004 </span>            : {
+<span class="lineNum">    1005 </span>            :     return qFuzzyCompare(m1.m[0][0], m2.m[0][0]) &amp;&amp;
+<span class="lineNum">    1006 </span>            :            qFuzzyCompare(m1.m[0][1], m2.m[0][1]) &amp;&amp;
+<span class="lineNum">    1007 </span>            :            qFuzzyCompare(m1.m[0][2], m2.m[0][2]) &amp;&amp;
+<span class="lineNum">    1008 </span>            :            qFuzzyCompare(m1.m[0][3], m2.m[0][3]) &amp;&amp;
+<span class="lineNum">    1009 </span>            :            qFuzzyCompare(m1.m[1][0], m2.m[1][0]) &amp;&amp;
+<span class="lineNum">    1010 </span>            :            qFuzzyCompare(m1.m[1][1], m2.m[1][1]) &amp;&amp;
+<span class="lineNum">    1011 </span>            :            qFuzzyCompare(m1.m[1][2], m2.m[1][2]) &amp;&amp;
+<span class="lineNum">    1012 </span>            :            qFuzzyCompare(m1.m[1][3], m2.m[1][3]) &amp;&amp;
+<span class="lineNum">    1013 </span>            :            qFuzzyCompare(m1.m[2][0], m2.m[2][0]) &amp;&amp;
+<span class="lineNum">    1014 </span>            :            qFuzzyCompare(m1.m[2][1], m2.m[2][1]) &amp;&amp;
+<span class="lineNum">    1015 </span>            :            qFuzzyCompare(m1.m[2][2], m2.m[2][2]) &amp;&amp;
+<span class="lineNum">    1016 </span>            :            qFuzzyCompare(m1.m[2][3], m2.m[2][3]) &amp;&amp;
+<span class="lineNum">    1017 </span>            :            qFuzzyCompare(m1.m[3][0], m2.m[3][0]) &amp;&amp;
+<span class="lineNum">    1018 </span>            :            qFuzzyCompare(m1.m[3][1], m2.m[3][1]) &amp;&amp;
+<span class="lineNum">    1019 </span>            :            qFuzzyCompare(m1.m[3][2], m2.m[3][2]) &amp;&amp;
+<span class="lineNum">    1020 </span>            :            qFuzzyCompare(m1.m[3][3], m2.m[3][3]);
+<span class="lineNum">    1021 </span>            : }
+<span class="lineNum">    1022 </span>            : 
+<span class="lineNum">    1023 </span>            : inline QPoint QMatrix4x4::map(const QPoint&amp; point) const
+<span class="lineNum">    1024 </span>            : {
+<span class="lineNum">    1025 </span>            :     return *this * point;
+<span class="lineNum">    1026 </span>            : }
+<span class="lineNum">    1027 </span>            : 
+<span class="lineNum">    1028 </span>            : inline QPointF QMatrix4x4::map(const QPointF&amp; point) const
+<span class="lineNum">    1029 </span>            : {
+<span class="lineNum">    1030 </span>            :     return *this * point;
+<span class="lineNum">    1031 </span>            : }
+<span class="lineNum">    1032 </span>            : 
+<span class="lineNum">    1033 </span>            : #ifndef QT_NO_VECTOR3D
+<span class="lineNum">    1034 </span>            : 
+<span class="lineNum">    1035 </span>            : inline QVector3D QMatrix4x4::map(const QVector3D&amp; point) const
+<span class="lineNum">    1036 </span>            : {
+<span class="lineNum">    1037 </span>            :     return *this * point;
+<span class="lineNum">    1038 </span>            : }
+<span class="lineNum">    1039 </span>            : 
+<span class="lineNum">    1040 </span>            : inline QVector3D QMatrix4x4::mapVector(const QVector3D&amp; vector) const
+<span class="lineNum">    1041 </span>            : {
+<span class="lineNum">    1042 </span>            :     if (flagBits &lt; Scale) {
+<span class="lineNum">    1043 </span>            :         // Translation
+<span class="lineNum">    1044 </span>            :         return vector;
+<span class="lineNum">    1045 </span>            :     } else if (flagBits &lt; Rotation2D) {
+<span class="lineNum">    1046 </span>            :         // Translation | Scale
+<span class="lineNum">    1047 </span>            :         return QVector3D(vector.x() * m[0][0],
+<span class="lineNum">    1048 </span>            :                          vector.y() * m[1][1],
+<span class="lineNum">    1049 </span>            :                          vector.z() * m[2][2]);
+<span class="lineNum">    1050 </span>            :     } else {
+<span class="lineNum">    1051 </span>            :         return QVector3D(vector.x() * m[0][0] +
+<span class="lineNum">    1052 </span>            :                          vector.y() * m[1][0] +
+<span class="lineNum">    1053 </span>            :                          vector.z() * m[2][0],
+<span class="lineNum">    1054 </span>            :                          vector.x() * m[0][1] +
+<span class="lineNum">    1055 </span>            :                          vector.y() * m[1][1] +
+<span class="lineNum">    1056 </span>            :                          vector.z() * m[2][1],
+<span class="lineNum">    1057 </span>            :                          vector.x() * m[0][2] +
+<span class="lineNum">    1058 </span>            :                          vector.y() * m[1][2] +
+<span class="lineNum">    1059 </span>            :                          vector.z() * m[2][2]);
+<span class="lineNum">    1060 </span>            :     }
+<span class="lineNum">    1061 </span>            : }
+<span class="lineNum">    1062 </span>            : 
+<span class="lineNum">    1063 </span>            : #endif
+<span class="lineNum">    1064 </span>            : 
+<span class="lineNum">    1065 </span>            : #ifndef QT_NO_VECTOR4D
+<span class="lineNum">    1066 </span>            : 
+<span class="lineNum">    1067 </span>            : inline QVector4D QMatrix4x4::map(const QVector4D&amp; point) const
+<span class="lineNum">    1068 </span>            : {
+<span class="lineNum">    1069 </span>            :     return *this * point;
+<span class="lineNum">    1070 </span>            : }
+<span class="lineNum">    1071 </span>            : 
+<span class="lineNum">    1072 </span>            : #endif
+<span class="lineNum">    1073 </span>            : 
+<span class="lineNum">    1074 </span>            : inline float *QMatrix4x4::data()
+<span class="lineNum">    1075 </span>            : {
+<span class="lineNum">    1076 </span>            :     // We have to assume that the caller will modify the matrix elements,
+<span class="lineNum">    1077 </span>            :     // so we flip it over to &quot;General&quot; mode.
+<span class="lineNum">    1078 </span>            :     flagBits = General;
+<span class="lineNum">    1079 </span>            :     return *m;
+<span class="lineNum">    1080 </span>            : }
+<span class="lineNum">    1081 </span>            : 
+<span class="lineNum">    1082 </span>            : inline void QMatrix4x4::viewport(const QRectF &amp;rect)
+<span class="lineNum">    1083 </span>            : {
+<span class="lineNum">    1084 </span>            :     viewport(rect.x(), rect.y(), rect.width(), rect.height());
+<span class="lineNum">    1085 </span>            : }
+<span class="lineNum">    1086 </span>            : 
+<span class="lineNum">    1087 </span>            : #ifndef QT_NO_DEBUG_STREAM
+<span class="lineNum">    1088 </span>            : Q_GUI_EXPORT QDebug operator&lt;&lt;(QDebug dbg, const QMatrix4x4 &amp;m);
+<span class="lineNum">    1089 </span>            : #endif
+<span class="lineNum">    1090 </span>            : 
+<span class="lineNum">    1091 </span>            : #ifndef QT_NO_DATASTREAM
+<span class="lineNum">    1092 </span>            : Q_GUI_EXPORT QDataStream &amp;operator&lt;&lt;(QDataStream &amp;, const QMatrix4x4 &amp;);
+<span class="lineNum">    1093 </span>            : Q_GUI_EXPORT QDataStream &amp;operator&gt;&gt;(QDataStream &amp;, QMatrix4x4 &amp;);
+<span class="lineNum">    1094 </span>            : #endif
+<span class="lineNum">    1095 </span>            : 
+<span class="lineNum">    1096 </span>            : #if QT_DEPRECATED_SINCE(5, 0)
+<span class="lineNum">    1097 </span>            : template &lt;int N, int M&gt;
+<span class="lineNum">    1098 </span>            : QT_DEPRECATED QMatrix4x4 qGenericMatrixToMatrix4x4(const QGenericMatrix&lt;N, M, float&gt;&amp; matrix)
+<span class="lineNum">    1099 </span>            : {
+<span class="lineNum">    1100 </span>            :     return QMatrix4x4(matrix.constData(), N, M);
+<span class="lineNum">    1101 </span>            : }
+<span class="lineNum">    1102 </span>            : 
+<span class="lineNum">    1103 </span>            : template &lt;int N, int M&gt;
+<span class="lineNum">    1104 </span>            : QT_DEPRECATED QGenericMatrix&lt;N, M, float&gt; qGenericMatrixFromMatrix4x4(const QMatrix4x4&amp; matrix)
+<span class="lineNum">    1105 </span>            : {
+<span class="lineNum">    1106 </span>            :     QGenericMatrix&lt;N, M, float&gt; result;
+<span class="lineNum">    1107 </span>            :     const float *m = matrix.constData();
+<span class="lineNum">    1108 </span>            :     float *values = result.data();
+<span class="lineNum">    1109 </span>            :     for (int col = 0; col &lt; N; ++col) {
+<span class="lineNum">    1110 </span>            :         for (int row = 0; row &lt; M; ++row) {
+<span class="lineNum">    1111 </span>            :             if (col &lt; 4 &amp;&amp; row &lt; 4)
+<span class="lineNum">    1112 </span>            :                 values[col * M + row] = m[col * 4 + row];
+<span class="lineNum">    1113 </span>            :             else if (col == row)
+<span class="lineNum">    1114 </span>            :                 values[col * M + row] = 1.0f;
+<span class="lineNum">    1115 </span>            :             else
+<span class="lineNum">    1116 </span>            :                 values[col * M + row] = 0.0f;
+<span class="lineNum">    1117 </span>            :         }
+<span class="lineNum">    1118 </span>            :     }
+<span class="lineNum">    1119 </span>            :     return result;
+<span class="lineNum">    1120 </span>            : }
+<span class="lineNum">    1121 </span>            : #endif
+<span class="lineNum">    1122 </span>            : 
+<span class="lineNum">    1123 </span>            : #endif
+<span class="lineNum">    1124 </span>            : 
+<span class="lineNum">    1125 </span>            : QT_END_NAMESPACE
+<span class="lineNum">    1126 </span>            : 
+<span class="lineNum">    1127 </span>            : #endif
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.11</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

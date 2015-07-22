@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCase name="FPSTest">
+<Environment>
+    <QtVersion>5.5.0</QtVersion>
+    <QtBuild>Qt 5.5.0 (x86_64&#x002D;little_endian&#x002D;lp64 shared (dynamic) release build; by Clang 6.0 (clang&#x002D;600.0.56) (Apple))</QtBuild>
+    <QTestVersion>5.5.0</QTestVersion>
+</Environment>
+<TestFunction name="initTestCase">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="51.119983"/>
+</TestFunction>
+<TestFunction name="test">
+<Incident type="pass" file="" line="0">
+    <DataTag><![CDATA[0]]></DataTag>
+</Incident>
+<Incident type="pass" file="" line="0">
+    <DataTag><![CDATA[1]]></DataTag>
+</Incident>
+<Incident type="pass" file="" line="0">
+    <DataTag><![CDATA[2]]></DataTag>
+</Incident>
+<Incident type="pass" file="" line="0">
+    <DataTag><![CDATA[5]]></DataTag>
+</Incident>
+    <Duration msecs="12147.984382"/>
+</TestFunction>
+<TestFunction name="cleanupTestCase">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="0.039479"/>
+</TestFunction>
+<Duration msecs="12199.234180"/>
+</TestCase>

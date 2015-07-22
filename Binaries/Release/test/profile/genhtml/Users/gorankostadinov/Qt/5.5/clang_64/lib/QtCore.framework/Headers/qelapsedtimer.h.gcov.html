@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - /Users/gorankostadinov/Qt/5.5/clang_64/lib/QtCore.framework/Headers/qelapsedtimer.h</title>
+  <link rel="stylesheet" type="text/css" href="../../../../../../../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../../../../../../../index.html">top level</a> - <a href="index.html">Users/gorankostadinov/Qt/5.5/clang_64/lib/QtCore.framework/Headers</a> - qelapsedtimer.h<span style="font-size: 80%;"> (source / <a href="qelapsedtimer.h.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2015-07-22 15:15:40</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr><td><img src="../../../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : /****************************************************************************</a>
+<span class="lineNum">       2 </span>            : **
+<span class="lineNum">       3 </span>            : ** Copyright (C) 2015 The Qt Company Ltd.
+<span class="lineNum">       4 </span>            : ** Contact: http://www.qt.io/licensing/
+<span class="lineNum">       5 </span>            : **
+<span class="lineNum">       6 </span>            : ** This file is part of the QtCore module of the Qt Toolkit.
+<span class="lineNum">       7 </span>            : **
+<span class="lineNum">       8 </span>            : ** $QT_BEGIN_LICENSE:LGPL21$
+<span class="lineNum">       9 </span>            : ** Commercial License Usage
+<span class="lineNum">      10 </span>            : ** Licensees holding valid commercial Qt licenses may use this file in
+<span class="lineNum">      11 </span>            : ** accordance with the commercial license agreement provided with the
+<span class="lineNum">      12 </span>            : ** Software or, alternatively, in accordance with the terms contained in
+<span class="lineNum">      13 </span>            : ** a written agreement between you and The Qt Company. For licensing terms
+<span class="lineNum">      14 </span>            : ** and conditions see http://www.qt.io/terms-conditions. For further
+<span class="lineNum">      15 </span>            : ** information use the contact form at http://www.qt.io/contact-us.
+<span class="lineNum">      16 </span>            : **
+<span class="lineNum">      17 </span>            : ** GNU Lesser General Public License Usage
+<span class="lineNum">      18 </span>            : ** Alternatively, this file may be used under the terms of the GNU Lesser
+<span class="lineNum">      19 </span>            : ** General Public License version 2.1 or version 3 as published by the Free
+<span class="lineNum">      20 </span>            : ** Software Foundation and appearing in the file LICENSE.LGPLv21 and
+<span class="lineNum">      21 </span>            : ** LICENSE.LGPLv3 included in the packaging of this file. Please review the
+<span class="lineNum">      22 </span>            : ** following information to ensure the GNU Lesser General Public License
+<span class="lineNum">      23 </span>            : ** requirements will be met: https://www.gnu.org/licenses/lgpl.html and
+<span class="lineNum">      24 </span>            : ** http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
+<span class="lineNum">      25 </span>            : **
+<span class="lineNum">      26 </span>            : ** As a special exception, The Qt Company gives you certain additional
+<span class="lineNum">      27 </span>            : ** rights. These rights are described in The Qt Company LGPL Exception
+<span class="lineNum">      28 </span>            : ** version 1.1, included in the file LGPL_EXCEPTION.txt in this package.
+<span class="lineNum">      29 </span>            : **
+<span class="lineNum">      30 </span>            : ** $QT_END_LICENSE$
+<span class="lineNum">      31 </span>            : **
+<span class="lineNum">      32 </span>            : ****************************************************************************/
+<span class="lineNum">      33 </span>            : 
+<span class="lineNum">      34 </span>            : #ifndef QELAPSEDTIMER_H
+<span class="lineNum">      35 </span>            : #define QELAPSEDTIMER_H
+<span class="lineNum">      36 </span>            : 
+<span class="lineNum">      37 </span>            : #include &lt;QtCore/qglobal.h&gt;
+<span class="lineNum">      38 </span>            : 
+<span class="lineNum">      39 </span>            : QT_BEGIN_NAMESPACE
+<span class="lineNum">      40 </span>            : 
+<span class="lineNum">      41 </span>            : 
+<span class="lineNum">      42 </span>            : class Q_CORE_EXPORT QElapsedTimer
+<span class="lineNum">      43 </span>            : {
+<span class="lineNum">      44 </span>            : public:
+<span class="lineNum">      45 </span>            :     enum ClockType {
+<span class="lineNum">      46 </span>            :         SystemTime,
+<span class="lineNum">      47 </span>            :         MonotonicClock,
+<span class="lineNum">      48 </span>            :         TickCounter,
+<span class="lineNum">      49 </span>            :         MachAbsoluteTime,
+<span class="lineNum">      50 </span>            :         PerformanceCounter
+<a name="51"><span class="lineNum">      51 </span>            :     };</a>
+<span class="lineNum">      52 </span>            : 
+<span class="lineNum">      53 </span>            :     Q_DECL_CONSTEXPR QElapsedTimer()
+<span class="lineNum">      54 </span>            :         : t1(Q_INT64_C(0x8000000000000000)),
+<span class="lineNum">      55 </span>            :           t2(Q_INT64_C(0x8000000000000000))
+<span class="lineNum">      56 </span><span class="lineCov">         63 :     {</span>
+<span class="lineNum">      57 </span><span class="lineCov">        126 :     }</span>
+<span class="lineNum">      58 </span>            : 
+<span class="lineNum">      59 </span>            :     static ClockType clockType() Q_DECL_NOTHROW;
+<span class="lineNum">      60 </span>            :     static bool isMonotonic() Q_DECL_NOTHROW;
+<span class="lineNum">      61 </span>            : 
+<span class="lineNum">      62 </span>            :     void start() Q_DECL_NOTHROW;
+<span class="lineNum">      63 </span>            :     qint64 restart() Q_DECL_NOTHROW;
+<span class="lineNum">      64 </span>            :     void invalidate() Q_DECL_NOTHROW;
+<span class="lineNum">      65 </span>            :     bool isValid() const Q_DECL_NOTHROW;
+<span class="lineNum">      66 </span>            : 
+<span class="lineNum">      67 </span>            :     qint64 nsecsElapsed() const Q_DECL_NOTHROW;
+<span class="lineNum">      68 </span>            :     qint64 elapsed() const Q_DECL_NOTHROW;
+<span class="lineNum">      69 </span>            :     bool hasExpired(qint64 timeout) const Q_DECL_NOTHROW;
+<span class="lineNum">      70 </span>            : 
+<span class="lineNum">      71 </span>            :     qint64 msecsSinceReference() const Q_DECL_NOTHROW;
+<span class="lineNum">      72 </span>            :     qint64 msecsTo(const QElapsedTimer &amp;other) const Q_DECL_NOTHROW;
+<span class="lineNum">      73 </span>            :     qint64 secsTo(const QElapsedTimer &amp;other) const Q_DECL_NOTHROW;
+<span class="lineNum">      74 </span>            : 
+<span class="lineNum">      75 </span>            :     bool operator==(const QElapsedTimer &amp;other) const Q_DECL_NOTHROW
+<span class="lineNum">      76 </span>            :     { return t1 == other.t1 &amp;&amp; t2 == other.t2; }
+<span class="lineNum">      77 </span>            :     bool operator!=(const QElapsedTimer &amp;other) const Q_DECL_NOTHROW
+<span class="lineNum">      78 </span>            :     { return !(*this == other); }
+<span class="lineNum">      79 </span>            : 
+<span class="lineNum">      80 </span>            :     friend bool Q_CORE_EXPORT operator&lt;(const QElapsedTimer &amp;v1, const QElapsedTimer &amp;v2) Q_DECL_NOTHROW;
+<span class="lineNum">      81 </span>            : 
+<span class="lineNum">      82 </span>            : private:
+<span class="lineNum">      83 </span>            :     qint64 t1;
+<span class="lineNum">      84 </span>            :     qint64 t2;
+<span class="lineNum">      85 </span>            : };
+<span class="lineNum">      86 </span>            : 
+<span class="lineNum">      87 </span>            : QT_END_NAMESPACE
+<span class="lineNum">      88 </span>            : 
+<span class="lineNum">      89 </span>            : #endif // QELAPSEDTIMER_H
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.11</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

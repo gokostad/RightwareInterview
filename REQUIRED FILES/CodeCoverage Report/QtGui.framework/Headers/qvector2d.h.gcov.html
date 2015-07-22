@@ -1,0 +1,354 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - QtGui.framework/Headers/qvector2d.h</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../index.html">top level</a> - <a href="index.html">QtGui.framework/Headers</a> - qvector2d.h<span style="font-size: 80%;"> (source / <a href="qvector2d.h.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntryLo">33.3 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2015-07-19 23:52:44</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntry">9</td>
+            <td class="headerCovTableEntryLo">44.4 %</td>
+          </tr>
+          <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : /****************************************************************************</a>
+<span class="lineNum">       2 </span>            : **
+<span class="lineNum">       3 </span>            : ** Copyright (C) 2015 The Qt Company Ltd.
+<span class="lineNum">       4 </span>            : ** Contact: http://www.qt.io/licensing/
+<span class="lineNum">       5 </span>            : **
+<span class="lineNum">       6 </span>            : ** This file is part of the QtGui module of the Qt Toolkit.
+<span class="lineNum">       7 </span>            : **
+<span class="lineNum">       8 </span>            : ** $QT_BEGIN_LICENSE:LGPL21$
+<span class="lineNum">       9 </span>            : ** Commercial License Usage
+<span class="lineNum">      10 </span>            : ** Licensees holding valid commercial Qt licenses may use this file in
+<span class="lineNum">      11 </span>            : ** accordance with the commercial license agreement provided with the
+<span class="lineNum">      12 </span>            : ** Software or, alternatively, in accordance with the terms contained in
+<span class="lineNum">      13 </span>            : ** a written agreement between you and The Qt Company. For licensing terms
+<span class="lineNum">      14 </span>            : ** and conditions see http://www.qt.io/terms-conditions. For further
+<span class="lineNum">      15 </span>            : ** information use the contact form at http://www.qt.io/contact-us.
+<span class="lineNum">      16 </span>            : **
+<span class="lineNum">      17 </span>            : ** GNU Lesser General Public License Usage
+<span class="lineNum">      18 </span>            : ** Alternatively, this file may be used under the terms of the GNU Lesser
+<span class="lineNum">      19 </span>            : ** General Public License version 2.1 or version 3 as published by the Free
+<span class="lineNum">      20 </span>            : ** Software Foundation and appearing in the file LICENSE.LGPLv21 and
+<span class="lineNum">      21 </span>            : ** LICENSE.LGPLv3 included in the packaging of this file. Please review the
+<span class="lineNum">      22 </span>            : ** following information to ensure the GNU Lesser General Public License
+<span class="lineNum">      23 </span>            : ** requirements will be met: https://www.gnu.org/licenses/lgpl.html and
+<span class="lineNum">      24 </span>            : ** http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
+<span class="lineNum">      25 </span>            : **
+<span class="lineNum">      26 </span>            : ** As a special exception, The Qt Company gives you certain additional
+<span class="lineNum">      27 </span>            : ** rights. These rights are described in The Qt Company LGPL Exception
+<span class="lineNum">      28 </span>            : ** version 1.1, included in the file LGPL_EXCEPTION.txt in this package.
+<span class="lineNum">      29 </span>            : **
+<span class="lineNum">      30 </span>            : ** $QT_END_LICENSE$
+<span class="lineNum">      31 </span>            : **
+<span class="lineNum">      32 </span>            : ****************************************************************************/
+<span class="lineNum">      33 </span>            : 
+<span class="lineNum">      34 </span>            : #ifndef QVECTOR2D_H
+<span class="lineNum">      35 </span>            : #define QVECTOR2D_H
+<span class="lineNum">      36 </span>            : 
+<span class="lineNum">      37 </span>            : #include &lt;QtCore/qpoint.h&gt;
+<span class="lineNum">      38 </span>            : #include &lt;QtCore/qmetatype.h&gt;
+<span class="lineNum">      39 </span>            : 
+<span class="lineNum">      40 </span>            : QT_BEGIN_NAMESPACE
+<span class="lineNum">      41 </span>            : 
+<span class="lineNum">      42 </span>            : 
+<span class="lineNum">      43 </span>            : class QVector3D;
+<span class="lineNum">      44 </span>            : class QVector4D;
+<span class="lineNum">      45 </span>            : class QVariant;
+<span class="lineNum">      46 </span>            : 
+<span class="lineNum">      47 </span>            : #ifndef QT_NO_VECTOR2D
+<span class="lineNum">      48 </span>            : 
+<span class="lineNum">      49 </span>            : class Q_GUI_EXPORT QVector2D
+<span class="lineNum">      50 </span>            : {
+<span class="lineNum">      51 </span>            : public:
+<span class="lineNum">      52 </span>            :     Q_DECL_CONSTEXPR QVector2D();
+<span class="lineNum">      53 </span>            :     explicit QVector2D(Qt::Initialization) {}
+<span class="lineNum">      54 </span>            :     Q_DECL_CONSTEXPR QVector2D(float xpos, float ypos);
+<span class="lineNum">      55 </span>            :     Q_DECL_CONSTEXPR explicit QVector2D(const QPoint&amp; point);
+<span class="lineNum">      56 </span>            :     Q_DECL_CONSTEXPR explicit QVector2D(const QPointF&amp; point);
+<span class="lineNum">      57 </span>            : #ifndef QT_NO_VECTOR3D
+<span class="lineNum">      58 </span>            :     explicit QVector2D(const QVector3D&amp; vector);
+<span class="lineNum">      59 </span>            : #endif
+<span class="lineNum">      60 </span>            : #ifndef QT_NO_VECTOR4D
+<span class="lineNum">      61 </span>            :     explicit QVector2D(const QVector4D&amp; vector);
+<span class="lineNum">      62 </span>            : #endif
+<span class="lineNum">      63 </span>            : 
+<span class="lineNum">      64 </span>            :     bool isNull() const;
+<span class="lineNum">      65 </span>            : 
+<span class="lineNum">      66 </span>            :     Q_DECL_CONSTEXPR float x() const;
+<span class="lineNum">      67 </span>            :     Q_DECL_CONSTEXPR float y() const;
+<span class="lineNum">      68 </span>            : 
+<span class="lineNum">      69 </span>            :     void setX(float x);
+<span class="lineNum">      70 </span>            :     void setY(float y);
+<span class="lineNum">      71 </span>            : 
+<span class="lineNum">      72 </span>            :     float &amp;operator[](int i);
+<span class="lineNum">      73 </span>            :     float operator[](int i) const;
+<span class="lineNum">      74 </span>            : 
+<span class="lineNum">      75 </span>            :     float length() const;
+<span class="lineNum">      76 </span>            :     float lengthSquared() const; //In Qt 6 convert to inline and constexpr
+<span class="lineNum">      77 </span>            : 
+<span class="lineNum">      78 </span>            :     QVector2D normalized() const Q_REQUIRED_RESULT;
+<span class="lineNum">      79 </span>            :     void normalize();
+<span class="lineNum">      80 </span>            : 
+<span class="lineNum">      81 </span>            :     float distanceToPoint(const QVector2D &amp;point) const;
+<span class="lineNum">      82 </span>            :     float distanceToLine(const QVector2D&amp; point, const QVector2D&amp; direction) const;
+<span class="lineNum">      83 </span>            : 
+<span class="lineNum">      84 </span>            :     QVector2D &amp;operator+=(const QVector2D &amp;vector);
+<span class="lineNum">      85 </span>            :     QVector2D &amp;operator-=(const QVector2D &amp;vector);
+<span class="lineNum">      86 </span>            :     QVector2D &amp;operator*=(float factor);
+<span class="lineNum">      87 </span>            :     QVector2D &amp;operator*=(const QVector2D &amp;vector);
+<span class="lineNum">      88 </span>            :     QVector2D &amp;operator/=(float divisor);
+<span class="lineNum">      89 </span>            :     inline QVector2D &amp;operator/=(const QVector2D &amp;vector);
+<span class="lineNum">      90 </span>            : 
+<span class="lineNum">      91 </span>            :     static float dotProduct(const QVector2D&amp; v1, const QVector2D&amp; v2); //In Qt 6 convert to inline and constexpr
+<span class="lineNum">      92 </span>            : 
+<span class="lineNum">      93 </span>            :     Q_DECL_CONSTEXPR friend inline bool operator==(const QVector2D &amp;v1, const QVector2D &amp;v2);
+<span class="lineNum">      94 </span>            :     Q_DECL_CONSTEXPR friend inline bool operator!=(const QVector2D &amp;v1, const QVector2D &amp;v2);
+<span class="lineNum">      95 </span>            :     Q_DECL_CONSTEXPR friend inline const QVector2D operator+(const QVector2D &amp;v1, const QVector2D &amp;v2);
+<span class="lineNum">      96 </span>            :     Q_DECL_CONSTEXPR friend inline const QVector2D operator-(const QVector2D &amp;v1, const QVector2D &amp;v2);
+<span class="lineNum">      97 </span>            :     Q_DECL_CONSTEXPR friend inline const QVector2D operator*(float factor, const QVector2D &amp;vector);
+<span class="lineNum">      98 </span>            :     Q_DECL_CONSTEXPR friend inline const QVector2D operator*(const QVector2D &amp;vector, float factor);
+<span class="lineNum">      99 </span>            :     Q_DECL_CONSTEXPR friend inline const QVector2D operator*(const QVector2D &amp;v1, const QVector2D &amp;v2);
+<span class="lineNum">     100 </span>            :     Q_DECL_CONSTEXPR friend inline const QVector2D operator-(const QVector2D &amp;vector);
+<span class="lineNum">     101 </span>            :     Q_DECL_CONSTEXPR friend inline const QVector2D operator/(const QVector2D &amp;vector, float divisor);
+<span class="lineNum">     102 </span>            :     Q_DECL_CONSTEXPR friend inline const QVector2D operator/(const QVector2D &amp;vector, const QVector2D &amp;divisor);
+<span class="lineNum">     103 </span>            : 
+<span class="lineNum">     104 </span>            :     Q_DECL_CONSTEXPR friend inline bool qFuzzyCompare(const QVector2D&amp; v1, const QVector2D&amp; v2);
+<span class="lineNum">     105 </span>            : 
+<span class="lineNum">     106 </span>            : #ifndef QT_NO_VECTOR3D
+<span class="lineNum">     107 </span>            :     QVector3D toVector3D() const;
+<span class="lineNum">     108 </span>            : #endif
+<span class="lineNum">     109 </span>            : #ifndef QT_NO_VECTOR4D
+<span class="lineNum">     110 </span>            :     QVector4D toVector4D() const;
+<span class="lineNum">     111 </span>            : #endif
+<span class="lineNum">     112 </span>            : 
+<span class="lineNum">     113 </span>            :     Q_DECL_CONSTEXPR QPoint toPoint() const;
+<span class="lineNum">     114 </span>            :     Q_DECL_CONSTEXPR QPointF toPointF() const;
+<span class="lineNum">     115 </span>            : 
+<span class="lineNum">     116 </span>            :     operator QVariant() const;
+<span class="lineNum">     117 </span>            : 
+<span class="lineNum">     118 </span>            : private:
+<span class="lineNum">     119 </span>            :     float xp, yp;
+<span class="lineNum">     120 </span>            : 
+<span class="lineNum">     121 </span>            :     friend class QVector3D;
+<span class="lineNum">     122 </span>            :     friend class QVector4D;
+<span class="lineNum">     123 </span>            : };
+<span class="lineNum">     124 </span>            : 
+<a name="125"><span class="lineNum">     125 </span>            : Q_DECLARE_TYPEINFO(QVector2D, Q_MOVABLE_TYPE);</a>
+<span class="lineNum">     126 </span>            : 
+<a name="127"><span class="lineNum">     127 </span><span class="lineCov">         20 : Q_DECL_CONSTEXPR inline QVector2D::QVector2D() : xp(0.0f), yp(0.0f) {}</span></a>
+<span class="lineNum">     128 </span>            : 
+<span class="lineNum">     129 </span><span class="lineCov">    9333600 : Q_DECL_CONSTEXPR inline QVector2D::QVector2D(float xpos, float ypos) : xp(xpos), yp(ypos) {}</span>
+<span class="lineNum">     130 </span>            : 
+<a name="131"><span class="lineNum">     131 </span>            : Q_DECL_CONSTEXPR inline QVector2D::QVector2D(const QPoint&amp; point) : xp(point.x()), yp(point.y()) {}</a>
+<span class="lineNum">     132 </span>            : 
+<span class="lineNum">     133 </span><span class="lineNoCov">          0 : Q_DECL_CONSTEXPR inline QVector2D::QVector2D(const QPointF&amp; point) : xp(point.x()), yp(point.y()) {}</span>
+<span class="lineNum">     134 </span>            : 
+<span class="lineNum">     135 </span>            : inline bool QVector2D::isNull() const
+<span class="lineNum">     136 </span>            : {
+<span class="lineNum">     137 </span>            :     return qIsNull(xp) &amp;&amp; qIsNull(yp);
+<a name="138"><span class="lineNum">     138 </span>            : }</a>
+<a name="139"><span class="lineNum">     139 </span>            : </a>
+<span class="lineNum">     140 </span><span class="lineNoCov">          0 : Q_DECL_CONSTEXPR inline float QVector2D::x() const { return xp; }</span>
+<span class="lineNum">     141 </span><span class="lineNoCov">          0 : Q_DECL_CONSTEXPR inline float QVector2D::y() const { return yp; }</span>
+<span class="lineNum">     142 </span>            : 
+<span class="lineNum">     143 </span>            : inline void QVector2D::setX(float aX) { xp = aX; }
+<span class="lineNum">     144 </span>            : inline void QVector2D::setY(float aY) { yp = aY; }
+<span class="lineNum">     145 </span>            : 
+<span class="lineNum">     146 </span>            : inline float &amp;QVector2D::operator[](int i)
+<span class="lineNum">     147 </span>            : {
+<span class="lineNum">     148 </span>            :     Q_ASSERT(uint(i) &lt; 2u);
+<span class="lineNum">     149 </span>            :     return *(&amp;xp + i);
+<span class="lineNum">     150 </span>            : }
+<span class="lineNum">     151 </span>            : 
+<span class="lineNum">     152 </span>            : inline float QVector2D::operator[](int i) const
+<span class="lineNum">     153 </span>            : {
+<span class="lineNum">     154 </span>            :     Q_ASSERT(uint(i) &lt; 2u);
+<span class="lineNum">     155 </span>            :     return *(&amp;xp + i);
+<span class="lineNum">     156 </span>            : }
+<span class="lineNum">     157 </span>            : 
+<span class="lineNum">     158 </span>            : inline QVector2D &amp;QVector2D::operator+=(const QVector2D &amp;vector)
+<span class="lineNum">     159 </span>            : {
+<span class="lineNum">     160 </span>            :     xp += vector.xp;
+<span class="lineNum">     161 </span>            :     yp += vector.yp;
+<span class="lineNum">     162 </span>            :     return *this;
+<span class="lineNum">     163 </span>            : }
+<span class="lineNum">     164 </span>            : 
+<span class="lineNum">     165 </span>            : inline QVector2D &amp;QVector2D::operator-=(const QVector2D &amp;vector)
+<span class="lineNum">     166 </span>            : {
+<span class="lineNum">     167 </span>            :     xp -= vector.xp;
+<span class="lineNum">     168 </span>            :     yp -= vector.yp;
+<span class="lineNum">     169 </span>            :     return *this;
+<span class="lineNum">     170 </span>            : }
+<span class="lineNum">     171 </span>            : 
+<span class="lineNum">     172 </span>            : inline QVector2D &amp;QVector2D::operator*=(float factor)
+<span class="lineNum">     173 </span>            : {
+<span class="lineNum">     174 </span>            :     xp *= factor;
+<span class="lineNum">     175 </span>            :     yp *= factor;
+<span class="lineNum">     176 </span>            :     return *this;
+<span class="lineNum">     177 </span>            : }
+<span class="lineNum">     178 </span>            : 
+<span class="lineNum">     179 </span>            : inline QVector2D &amp;QVector2D::operator*=(const QVector2D &amp;vector)
+<span class="lineNum">     180 </span>            : {
+<span class="lineNum">     181 </span>            :     xp *= vector.xp;
+<span class="lineNum">     182 </span>            :     yp *= vector.yp;
+<span class="lineNum">     183 </span>            :     return *this;
+<span class="lineNum">     184 </span>            : }
+<span class="lineNum">     185 </span>            : 
+<span class="lineNum">     186 </span>            : inline QVector2D &amp;QVector2D::operator/=(float divisor)
+<span class="lineNum">     187 </span>            : {
+<span class="lineNum">     188 </span>            :     xp /= divisor;
+<span class="lineNum">     189 </span>            :     yp /= divisor;
+<span class="lineNum">     190 </span>            :     return *this;
+<span class="lineNum">     191 </span>            : }
+<span class="lineNum">     192 </span>            : 
+<span class="lineNum">     193 </span>            : inline QVector2D &amp;QVector2D::operator/=(const QVector2D &amp;vector)
+<span class="lineNum">     194 </span>            : {
+<span class="lineNum">     195 </span>            :     xp /= vector.xp;
+<span class="lineNum">     196 </span>            :     yp /= vector.yp;
+<span class="lineNum">     197 </span>            :     return *this;
+<span class="lineNum">     198 </span>            : }
+<span class="lineNum">     199 </span>            : 
+<span class="lineNum">     200 </span>            : Q_DECL_CONSTEXPR inline bool operator==(const QVector2D &amp;v1, const QVector2D &amp;v2)
+<span class="lineNum">     201 </span>            : {
+<span class="lineNum">     202 </span>            :     return v1.xp == v2.xp &amp;&amp; v1.yp == v2.yp;
+<span class="lineNum">     203 </span>            : }
+<span class="lineNum">     204 </span>            : 
+<span class="lineNum">     205 </span>            : Q_DECL_CONSTEXPR inline bool operator!=(const QVector2D &amp;v1, const QVector2D &amp;v2)
+<span class="lineNum">     206 </span>            : {
+<span class="lineNum">     207 </span>            :     return v1.xp != v2.xp || v1.yp != v2.yp;
+<span class="lineNum">     208 </span>            : }
+<span class="lineNum">     209 </span>            : 
+<span class="lineNum">     210 </span>            : Q_DECL_CONSTEXPR inline const QVector2D operator+(const QVector2D &amp;v1, const QVector2D &amp;v2)
+<span class="lineNum">     211 </span>            : {
+<span class="lineNum">     212 </span>            :     return QVector2D(v1.xp + v2.xp, v1.yp + v2.yp);
+<a name="213"><span class="lineNum">     213 </span>            : }</a>
+<span class="lineNum">     214 </span>            : 
+<span class="lineNum">     215 </span>            : Q_DECL_CONSTEXPR inline const QVector2D operator-(const QVector2D &amp;v1, const QVector2D &amp;v2)
+<span class="lineNum">     216 </span>            : {
+<span class="lineNum">     217 </span><span class="lineNoCov">          0 :     return QVector2D(v1.xp - v2.xp, v1.yp - v2.yp);</span>
+<span class="lineNum">     218 </span>            : }
+<span class="lineNum">     219 </span>            : 
+<span class="lineNum">     220 </span>            : Q_DECL_CONSTEXPR inline const QVector2D operator*(float factor, const QVector2D &amp;vector)
+<span class="lineNum">     221 </span>            : {
+<span class="lineNum">     222 </span>            :     return QVector2D(vector.xp * factor, vector.yp * factor);
+<span class="lineNum">     223 </span>            : }
+<span class="lineNum">     224 </span>            : 
+<span class="lineNum">     225 </span>            : Q_DECL_CONSTEXPR inline const QVector2D operator*(const QVector2D &amp;vector, float factor)
+<span class="lineNum">     226 </span>            : {
+<span class="lineNum">     227 </span>            :     return QVector2D(vector.xp * factor, vector.yp * factor);
+<span class="lineNum">     228 </span>            : }
+<span class="lineNum">     229 </span>            : 
+<span class="lineNum">     230 </span>            : Q_DECL_CONSTEXPR inline const QVector2D operator*(const QVector2D &amp;v1, const QVector2D &amp;v2)
+<span class="lineNum">     231 </span>            : {
+<span class="lineNum">     232 </span>            :     return QVector2D(v1.xp * v2.xp, v1.yp * v2.yp);
+<span class="lineNum">     233 </span>            : }
+<span class="lineNum">     234 </span>            : 
+<span class="lineNum">     235 </span>            : Q_DECL_CONSTEXPR inline const QVector2D operator-(const QVector2D &amp;vector)
+<span class="lineNum">     236 </span>            : {
+<span class="lineNum">     237 </span>            :     return QVector2D(-vector.xp, -vector.yp);
+<span class="lineNum">     238 </span>            : }
+<span class="lineNum">     239 </span>            : 
+<span class="lineNum">     240 </span>            : Q_DECL_CONSTEXPR inline const QVector2D operator/(const QVector2D &amp;vector, float divisor)
+<span class="lineNum">     241 </span>            : {
+<span class="lineNum">     242 </span>            :     return QVector2D(vector.xp / divisor, vector.yp / divisor);
+<span class="lineNum">     243 </span>            : }
+<span class="lineNum">     244 </span>            : 
+<span class="lineNum">     245 </span>            : Q_DECL_CONSTEXPR inline const QVector2D operator/(const QVector2D &amp;vector, const QVector2D &amp;divisor)
+<span class="lineNum">     246 </span>            : {
+<span class="lineNum">     247 </span>            :     return QVector2D(vector.xp / divisor.xp, vector.yp / divisor.yp);
+<span class="lineNum">     248 </span>            : }
+<span class="lineNum">     249 </span>            : 
+<span class="lineNum">     250 </span>            : Q_DECL_CONSTEXPR inline bool qFuzzyCompare(const QVector2D&amp; v1, const QVector2D&amp; v2)
+<span class="lineNum">     251 </span>            : {
+<span class="lineNum">     252 </span>            :     return qFuzzyCompare(v1.xp, v2.xp) &amp;&amp; qFuzzyCompare(v1.yp, v2.yp);
+<span class="lineNum">     253 </span>            : }
+<span class="lineNum">     254 </span>            : 
+<span class="lineNum">     255 </span>            : Q_DECL_CONSTEXPR inline QPoint QVector2D::toPoint() const
+<span class="lineNum">     256 </span>            : {
+<span class="lineNum">     257 </span>            :     return QPoint(qRound(xp), qRound(yp));
+<span class="lineNum">     258 </span>            : }
+<span class="lineNum">     259 </span>            : 
+<span class="lineNum">     260 </span>            : Q_DECL_CONSTEXPR inline QPointF QVector2D::toPointF() const
+<span class="lineNum">     261 </span>            : {
+<span class="lineNum">     262 </span>            :     return QPointF(qreal(xp), qreal(yp));
+<span class="lineNum">     263 </span>            : }
+<span class="lineNum">     264 </span>            : 
+<span class="lineNum">     265 </span>            : #ifndef QT_NO_DEBUG_STREAM
+<span class="lineNum">     266 </span>            : Q_GUI_EXPORT QDebug operator&lt;&lt;(QDebug dbg, const QVector2D &amp;vector);
+<span class="lineNum">     267 </span>            : #endif
+<span class="lineNum">     268 </span>            : 
+<span class="lineNum">     269 </span>            : #ifndef QT_NO_DATASTREAM
+<span class="lineNum">     270 </span>            : Q_GUI_EXPORT QDataStream &amp;operator&lt;&lt;(QDataStream &amp;, const QVector2D &amp;);
+<span class="lineNum">     271 </span>            : Q_GUI_EXPORT QDataStream &amp;operator&gt;&gt;(QDataStream &amp;, QVector2D &amp;);
+<span class="lineNum">     272 </span>            : #endif
+<span class="lineNum">     273 </span>            : 
+<span class="lineNum">     274 </span>            : #endif
+<span class="lineNum">     275 </span>            : 
+<span class="lineNum">     276 </span>            : QT_END_NAMESPACE
+<span class="lineNum">     277 </span>            : 
+<span class="lineNum">     278 </span>            : #endif
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.11</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

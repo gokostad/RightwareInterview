@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - /Users/gorankostadinov/Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qopenglwidget.h</title>
+  <link rel="stylesheet" type="text/css" href="../../../../../../../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../../../../../../../index.html">top level</a> - <a href="index.html">Users/gorankostadinov/Qt/5.5/clang_64/lib/QtWidgets.framework/Headers</a> - qopenglwidget.h<span style="font-size: 80%;"> (source / <a href="qopenglwidget.h.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2015-07-22 15:15:40</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
+          </tr>
+          <tr><td><img src="../../../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : /****************************************************************************</a>
+<span class="lineNum">       2 </span>            : **
+<span class="lineNum">       3 </span>            : ** Copyright (C) 2015 The Qt Company Ltd.
+<span class="lineNum">       4 </span>            : ** Contact: http://www.qt.io/licensing/
+<span class="lineNum">       5 </span>            : **
+<span class="lineNum">       6 </span>            : ** This file is part of the QtWidgets module of the Qt Toolkit.
+<span class="lineNum">       7 </span>            : **
+<span class="lineNum">       8 </span>            : ** $QT_BEGIN_LICENSE:LGPL21$
+<span class="lineNum">       9 </span>            : ** Commercial License Usage
+<span class="lineNum">      10 </span>            : ** Licensees holding valid commercial Qt licenses may use this file in
+<span class="lineNum">      11 </span>            : ** accordance with the commercial license agreement provided with the
+<span class="lineNum">      12 </span>            : ** Software or, alternatively, in accordance with the terms contained in
+<span class="lineNum">      13 </span>            : ** a written agreement between you and The Qt Company. For licensing terms
+<span class="lineNum">      14 </span>            : ** and conditions see http://www.qt.io/terms-conditions. For further
+<span class="lineNum">      15 </span>            : ** information use the contact form at http://www.qt.io/contact-us.
+<span class="lineNum">      16 </span>            : **
+<span class="lineNum">      17 </span>            : ** GNU Lesser General Public License Usage
+<span class="lineNum">      18 </span>            : ** Alternatively, this file may be used under the terms of the GNU Lesser
+<span class="lineNum">      19 </span>            : ** General Public License version 2.1 or version 3 as published by the Free
+<span class="lineNum">      20 </span>            : ** Software Foundation and appearing in the file LICENSE.LGPLv21 and
+<span class="lineNum">      21 </span>            : ** LICENSE.LGPLv3 included in the packaging of this file. Please review the
+<span class="lineNum">      22 </span>            : ** following information to ensure the GNU Lesser General Public License
+<span class="lineNum">      23 </span>            : ** requirements will be met: https://www.gnu.org/licenses/lgpl.html and
+<span class="lineNum">      24 </span>            : ** http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
+<span class="lineNum">      25 </span>            : **
+<span class="lineNum">      26 </span>            : ** As a special exception, The Qt Company gives you certain additional
+<span class="lineNum">      27 </span>            : ** rights. These rights are described in The Qt Company LGPL Exception
+<span class="lineNum">      28 </span>            : ** version 1.1, included in the file LGPL_EXCEPTION.txt in this package.
+<span class="lineNum">      29 </span>            : **
+<span class="lineNum">      30 </span>            : ** $QT_END_LICENSE$
+<span class="lineNum">      31 </span>            : **
+<span class="lineNum">      32 </span>            : ****************************************************************************/
+<span class="lineNum">      33 </span>            : 
+<span class="lineNum">      34 </span>            : #ifndef QOPENGLWIDGET_H
+<span class="lineNum">      35 </span>            : #define QOPENGLWIDGET_H
+<span class="lineNum">      36 </span>            : 
+<span class="lineNum">      37 </span>            : #include &lt;QtCore/qglobal.h&gt;
+<span class="lineNum">      38 </span>            : 
+<span class="lineNum">      39 </span>            : #ifndef QT_NO_OPENGL
+<span class="lineNum">      40 </span>            : 
+<span class="lineNum">      41 </span>            : #include &lt;QtWidgets/QWidget&gt;
+<span class="lineNum">      42 </span>            : #include &lt;QtGui/QSurfaceFormat&gt;
+<span class="lineNum">      43 </span>            : #include &lt;QtGui/qopengl.h&gt;
+<span class="lineNum">      44 </span>            : 
+<span class="lineNum">      45 </span>            : QT_BEGIN_NAMESPACE
+<span class="lineNum">      46 </span>            : 
+<span class="lineNum">      47 </span>            : class QOpenGLWidgetPrivate;
+<span class="lineNum">      48 </span>            : 
+<span class="lineNum">      49 </span>            : class Q_WIDGETS_EXPORT QOpenGLWidget : public QWidget
+<span class="lineNum">      50 </span>            : {
+<span class="lineNum">      51 </span>            :     Q_OBJECT
+<span class="lineNum">      52 </span>            :     Q_DECLARE_PRIVATE(QOpenGLWidget)
+<span class="lineNum">      53 </span>            : 
+<span class="lineNum">      54 </span>            : public:
+<span class="lineNum">      55 </span>            :     enum UpdateBehavior {
+<span class="lineNum">      56 </span>            :         NoPartialUpdate,
+<span class="lineNum">      57 </span>            :         PartialUpdate
+<span class="lineNum">      58 </span>            :     };
+<span class="lineNum">      59 </span>            : 
+<span class="lineNum">      60 </span>            :     explicit QOpenGLWidget(QWidget* parent = 0, Qt::WindowFlags f = 0);
+<span class="lineNum">      61 </span>            :     ~QOpenGLWidget();
+<span class="lineNum">      62 </span>            : 
+<span class="lineNum">      63 </span>            :     void setUpdateBehavior(UpdateBehavior updateBehavior);
+<span class="lineNum">      64 </span>            :     UpdateBehavior updateBehavior() const;
+<span class="lineNum">      65 </span>            : 
+<span class="lineNum">      66 </span>            :     void setFormat(const QSurfaceFormat &amp;format);
+<span class="lineNum">      67 </span>            :     QSurfaceFormat format() const;
+<span class="lineNum">      68 </span>            : 
+<span class="lineNum">      69 </span>            :     bool isValid() const;
+<span class="lineNum">      70 </span>            : 
+<span class="lineNum">      71 </span>            :     void makeCurrent();
+<span class="lineNum">      72 </span>            :     void doneCurrent();
+<span class="lineNum">      73 </span>            : 
+<span class="lineNum">      74 </span>            :     QOpenGLContext *context() const;
+<span class="lineNum">      75 </span>            :     GLuint defaultFramebufferObject() const;
+<span class="lineNum">      76 </span>            : 
+<span class="lineNum">      77 </span>            :     QImage grabFramebuffer();
+<span class="lineNum">      78 </span>            : 
+<span class="lineNum">      79 </span>            : Q_SIGNALS:
+<span class="lineNum">      80 </span>            :     void aboutToCompose();
+<span class="lineNum">      81 </span>            :     void frameSwapped();
+<span class="lineNum">      82 </span>            :     void aboutToResize();
+<span class="lineNum">      83 </span>            :     void resized();
+<span class="lineNum">      84 </span>            : 
+<span class="lineNum">      85 </span>            : protected:
+<span class="lineNum">      86 </span>            :     virtual void initializeGL();
+<span class="lineNum">      87 </span>            :     virtual void resizeGL(int w, int h);
+<span class="lineNum">      88 </span>            :     virtual void paintGL();
+<span class="lineNum">      89 </span>            : 
+<span class="lineNum">      90 </span>            :     void paintEvent(QPaintEvent *e) Q_DECL_OVERRIDE;
+<span class="lineNum">      91 </span>            :     void resizeEvent(QResizeEvent *e) Q_DECL_OVERRIDE;
+<a name="92"><span class="lineNum">      92 </span>            :     bool event(QEvent *e) Q_DECL_OVERRIDE;</a>
+<a name="93"><span class="lineNum">      93 </span>            : </a>
+<a name="94"><span class="lineNum">      94 </span>            :     int metric(QPaintDevice::PaintDeviceMetric metric) const Q_DECL_OVERRIDE;</a>
+<span class="lineNum">      95 </span>            :     QPaintDevice *redirected(QPoint *p) const Q_DECL_OVERRIDE;
+<span class="lineNum">      96 </span>            :     QPaintEngine *paintEngine() const Q_DECL_OVERRIDE;
+<span class="lineNum">      97 </span>            : 
+<span class="lineNum">      98 </span>            : private:
+<span class="lineNum">      99 </span>            :     Q_DISABLE_COPY(QOpenGLWidget)
+<span class="lineNum">     100 </span>            : };
+<span class="lineNum">     101 </span>            : 
+<span class="lineNum">     102 </span>            : QT_END_NAMESPACE
+<span class="lineNum">     103 </span>            : 
+<span class="lineNum">     104 </span>            : #endif // QT_NO_OPENGL
+<span class="lineNum">     105 </span>            : 
+<span class="lineNum">     106 </span>            : #endif // QOPENGLWIDGET_H
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.11</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - libmain/view_mainwidget.h</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">libmain</a> - view_mainwidget.h<span style="font-size: 80%;"> (source / <a href="view_mainwidget.h.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2015-07-22 15:15:40</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : /****************************************************************************</a>
+<span class="lineNum">       2 </span>            : **
+<span class="lineNum">       3 </span>            : ** Copyright (C) 2015 The Qt Company Ltd.
+<span class="lineNum">       4 </span>            : ** Contact: http://www.qt.io/licensing/
+<span class="lineNum">       5 </span>            : **
+<span class="lineNum">       6 </span>            : ** This file is part of the QtCore module of the Qt Toolkit.
+<span class="lineNum">       7 </span>            : **
+<span class="lineNum">       8 </span>            : ** $QT_BEGIN_LICENSE:BSD$
+<span class="lineNum">       9 </span>            : ** You may use this file under the terms of the BSD license as follows:
+<span class="lineNum">      10 </span>            : **
+<span class="lineNum">      11 </span>            : ** &quot;Redistribution and use in source and binary forms, with or without
+<span class="lineNum">      12 </span>            : ** modification, are permitted provided that the following conditions are
+<span class="lineNum">      13 </span>            : ** met:
+<span class="lineNum">      14 </span>            : **   * Redistributions of source code must retain the above copyright
+<span class="lineNum">      15 </span>            : **     notice, this list of conditions and the following disclaimer.
+<span class="lineNum">      16 </span>            : **   * Redistributions in binary form must reproduce the above copyright
+<span class="lineNum">      17 </span>            : **     notice, this list of conditions and the following disclaimer in
+<span class="lineNum">      18 </span>            : **     the documentation and/or other materials provided with the
+<span class="lineNum">      19 </span>            : **     distribution.
+<span class="lineNum">      20 </span>            : **   * Neither the name of The Qt Company Ltd nor the names of its
+<span class="lineNum">      21 </span>            : **     contributors may be used to endorse or promote products derived
+<span class="lineNum">      22 </span>            : **     from this software without specific prior written permission.
+<span class="lineNum">      23 </span>            : **
+<span class="lineNum">      24 </span>            : **
+<span class="lineNum">      25 </span>            : ** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+<span class="lineNum">      26 </span>            : ** &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+<span class="lineNum">      27 </span>            : ** LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+<span class="lineNum">      28 </span>            : ** A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+<span class="lineNum">      29 </span>            : ** OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+<span class="lineNum">      30 </span>            : ** SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+<span class="lineNum">      31 </span>            : ** LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+<span class="lineNum">      32 </span>            : ** DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+<span class="lineNum">      33 </span>            : ** THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+<span class="lineNum">      34 </span>            : ** (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+<span class="lineNum">      35 </span>            : ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.&quot;
+<span class="lineNum">      36 </span>            : **
+<span class="lineNum">      37 </span>            : ** $QT_END_LICENSE$
+<span class="lineNum">      38 </span>            : **
+<span class="lineNum">      39 </span>            : ****************************************************************************/
+<span class="lineNum">      40 </span>            : 
+<span class="lineNum">      41 </span>            : #ifndef VIEW_MAINWIDGET_H
+<span class="lineNum">      42 </span>            : #define VIEW_MAINWIDGET_H
+<span class="lineNum">      43 </span>            : 
+<span class="lineNum">      44 </span>            : #include &quot;view_geometryengine.h&quot;
+<span class="lineNum">      45 </span>            : 
+<span class="lineNum">      46 </span>            : #include &lt;QOpenGLWidget&gt;
+<span class="lineNum">      47 </span>            : #include &lt;QOpenGLFunctions&gt;
+<span class="lineNum">      48 </span>            : #include &lt;QMatrix4x4&gt;
+<span class="lineNum">      49 </span>            : #include &lt;QQuaternion&gt;
+<span class="lineNum">      50 </span>            : #include &lt;QVector2D&gt;
+<span class="lineNum">      51 </span>            : #include &lt;QBasicTimer&gt;
+<span class="lineNum">      52 </span>            : #include &lt;QOpenGLShaderProgram&gt;
+<span class="lineNum">      53 </span>            : /****************************************************************************
+<span class="lineNum">      54 </span>            : **
+<span class="lineNum">      55 </span>            : ** class View_MainWidget
+<span class="lineNum">      56 </span>            : **
+<span class="lineNum">      57 </span>            : ** Description:
+<span class="lineNum">      58 </span>            : ** Main widget, opengl, handling different events on the opengl widget and
+<span class="lineNum">      59 </span>            : ** drawing on screen. Doing animation.
+<span class="lineNum">      60 </span>            : **
+<span class="lineNum">      61 </span>            : ****************************************************************************/
+<span class="lineNum">      62 </span>            : #include &lt;QOpenGLTexture&gt;
+<span class="lineNum">      63 </span>            : #include &lt;QPushButton&gt;
+<span class="lineNum">      64 </span>            : 
+<span class="lineNum">      65 </span>            : #include &lt;vector&gt;
+<span class="lineNum">      66 </span>            : 
+<span class="lineNum">      67 </span>            : class View_GeometryEngine;
+<span class="lineNum">      68 </span>            : 
+<span class="lineNum">      69 </span>            : class View_MainWidget : public QOpenGLWidget, protected QOpenGLFunctions
+<span class="lineNum">      70 </span>            : {
+<span class="lineNum">      71 </span>            :     Q_OBJECT
+<span class="lineNum">      72 </span>            : 
+<a name="73"><span class="lineNum">      73 </span>            : public:</a>
+<span class="lineNum">      74 </span>            :     explicit View_MainWidget(QWidget *parent = 0);
+<span class="lineNum">      75 </span>            :     ~View_MainWidget();
+<span class="lineNum">      76 </span>            : 
+<span class="lineNum">      77 </span>            :     QString getInfoString();
+<span class="lineNum">      78 </span>            : 
+<span class="lineNum">      79 </span>            :     void addGeometry();
+<span class="lineNum">      80 </span>            :     void removeGeometry();
+<a name="81"><span class="lineNum">      81 </span>            :     size_t geometryCount();</a>
+<a name="82"><span class="lineNum">      82 </span>            : </a>
+<span class="lineNum">      83 </span><span class="lineNoCov">          0 :     void setAnimationMovementState(bool state) {m_stoped = state;}</span>
+<span class="lineNum">      84 </span><span class="lineNoCov">          0 :     bool getAnimationMovementState() { return m_stoped; }</span>
+<span class="lineNum">      85 </span>            : 
+<span class="lineNum">      86 </span>            : protected:
+<span class="lineNum">      87 </span>            :     void mouseDoubleClickEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
+<span class="lineNum">      88 </span>            :     void mousePressEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
+<span class="lineNum">      89 </span>            :     void mouseMoveEvent(QMouseEvent *) Q_DECL_OVERRIDE;
+<span class="lineNum">      90 </span>            :     void mouseReleaseEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
+<span class="lineNum">      91 </span>            :     void timerEvent(QTimerEvent *e) Q_DECL_OVERRIDE;
+<span class="lineNum">      92 </span>            : 
+<span class="lineNum">      93 </span>            :     void initializeGL() Q_DECL_OVERRIDE;
+<span class="lineNum">      94 </span>            :     void resizeGL(int w, int h) Q_DECL_OVERRIDE;
+<span class="lineNum">      95 </span>            :     void paintGL() Q_DECL_OVERRIDE;
+<span class="lineNum">      96 </span>            : 
+<span class="lineNum">      97 </span>            :     void initShaders();
+<span class="lineNum">      98 </span>            :     void initTextures();
+<span class="lineNum">      99 </span>            : 
+<span class="lineNum">     100 </span>            : private:
+<span class="lineNum">     101 </span>            :     QBasicTimer timer;
+<span class="lineNum">     102 </span>            :     QOpenGLShaderProgram program;
+<span class="lineNum">     103 </span>            :     std::vector&lt;View_GeometryEngine*&gt; geometries;
+<span class="lineNum">     104 </span>            : 
+<span class="lineNum">     105 </span>            :     QOpenGLTexture *texture;
+<span class="lineNum">     106 </span>            : 
+<span class="lineNum">     107 </span>            :     QMatrix4x4 projection;
+<span class="lineNum">     108 </span>            : 
+<span class="lineNum">     109 </span>            :     QVector2D mousePressPosition;
+<span class="lineNum">     110 </span>            :     QVector3D rotationAxis;
+<span class="lineNum">     111 </span>            :     qreal angularSpeed;
+<span class="lineNum">     112 </span>            :     QQuaternion rotation;
+<span class="lineNum">     113 </span>            : 
+<span class="lineNum">     114 </span>            :     bool m_stoped;
+<span class="lineNum">     115 </span>            : 
+<span class="lineNum">     116 </span>            : signals:
+<span class="lineNum">     117 </span>            :     void updateDone();
+<span class="lineNum">     118 </span>            : };
+<span class="lineNum">     119 </span>            : 
+<span class="lineNum">     120 </span>            : #endif // VIEW_MAINWIDGET_H
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.11</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>
