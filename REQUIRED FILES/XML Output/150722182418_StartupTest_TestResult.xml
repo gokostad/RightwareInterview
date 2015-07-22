@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TestCase name="FPSTest">
+<TestCase name="StartupTimeTest">
 <Environment>
     <QtVersion>5.5.0</QtVersion>
     <QtBuild>Qt 5.5.0 (x86_64&#x002D;little_endian&#x002D;lp64 shared (dynamic) release build; by Clang 6.0 (clang&#x002D;600.0.56) (Apple))</QtBuild>
@@ -7,20 +7,15 @@
 </Environment>
 <TestFunction name="initTestCase">
 <Incident type="pass" file="" line="0" />
-    <Duration msecs="55.284295"/>
+    <Duration msecs="151.263278"/>
 </TestFunction>
 <TestFunction name="test">
-<Incident type="pass" file="" line="0">
-    <DataTag><![CDATA[0]]></DataTag>
-</Incident>
-<Incident type="pass" file="" line="0">
-    <DataTag><![CDATA[1]]></DataTag>
-</Incident>
-    <Duration msecs="6110.996470"/>
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="27.539444"/>
 </TestFunction>
 <TestFunction name="cleanupTestCase">
 <Incident type="pass" file="" line="0" />
-    <Duration msecs="0.039907"/>
+    <Duration msecs="0.029150"/>
 </TestFunction>
-<Duration msecs="6166.456780"/>
+<Duration msecs="180.307130"/>
 </TestCase>

@@ -28,7 +28,7 @@ else:unix: PRE_TARGETDEPS += $$OUT_PWD/../libmain/liblibmain.a
 mac: CONFIG += MAC_CONFIG
 
 #comment next line if code coverage is not needed
-#MAC_CODE_COVERAGE=USE
+MAC_CODE_COVERAGE=USE
 
 MAC_CONFIG {
     CONFIG += c++11
